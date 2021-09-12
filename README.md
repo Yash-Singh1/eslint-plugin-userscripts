@@ -1,4 +1,4 @@
-# eslint-plugin-userscripts
+# `eslint-plugin-userscripts`
 
 Implements rules for userscripts metadata in eslint
 
