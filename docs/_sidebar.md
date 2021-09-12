@@ -9,6 +9,7 @@
   - [`require-name`](rules/require-name.md)
   - [`require-description`](rules/require-description.md)
   - [`require-version`](rules/require-version.md)
+  - [`require-attribute-space-prefix`](rules/require-attribute-space-prefix.md)
   - [`use-homepage-and-url`](rules/use-homepage-and-url.md)
   - [`use-download-and-update-url`](rules/use-download-and-update-url.md)
   - [`align-attributes`](rules/align-attributes.md)
