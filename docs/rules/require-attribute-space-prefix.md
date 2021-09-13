@@ -6,11 +6,11 @@ The `require-attribute-space-prefix` rule verifies that the header attribute are
 
 ## Why?
 
-To ensure maximum compatibility
+To ensure maximum compatibility.
 
 ## Options
 
-This rule has no options
+This rule has no options.
 
 ## Examples
 
