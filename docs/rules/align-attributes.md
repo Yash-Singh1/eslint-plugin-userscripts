@@ -1,8 +1,12 @@
 # `align-attributes`
 
-> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration file enables this rule.
+> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration
+> file enables this rule.
 
-> 🔧 The `--fix` option on the command line can automatically fix some of the problems reported by this rule.
+<!-- markdownlint-disable-next-line MD033 -->
+
+> 🔧 The `--fix` option on the command line can automatically fix some of the
+> problems reported by this rule.
 
 The `align-attributes` rule verifies that the attributes are spaced out.
 
@@ -12,7 +16,8 @@ For readability when debugging and editing the userscript.
 
 ## Options
 
-This rule has a number option which represents the spaces after the longest attribute name. Defaults to 2.
+This rule has a number option which represents the spaces after the longest
+attribute name. Defaults to 2.
 
 ## Examples
 

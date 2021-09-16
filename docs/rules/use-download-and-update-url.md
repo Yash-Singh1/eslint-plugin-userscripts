@@ -1,10 +1,15 @@
 # `use-download-and-update-url`
 
-> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration file enables this rule.
+> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration
+> file enables this rule.
 
-> 🔧 The `--fix` option on the command line can automatically fix some of the problems reported by this rule.
+<!-- markdownlint-disable-next-line MD033 -->
 
-The `use-download-and-update-url` rule verifies that if the `updateURL` attribute is present then the `downloadURL` attribute is too and vice versa.
+> 🔧 The `--fix` option on the command line can automatically fix some of the
+> problems reported by this rule.
+
+The `use-download-and-update-url` rule verifies that if the `updateURL` attribute
+is present then the `downloadURL` attribute is too and vice versa.
 
 ## Why?
 
@@ -35,4 +40,5 @@ For compatibility with different userscript runners.
 
 ## When Not to Use It
 
-When you are sure that the userscript runner that you and your users use is compatible with your choice.
+When you are sure that the userscript runner that you and your users use is
+compatible with your choice.

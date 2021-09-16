@@ -1,6 +1,7 @@
 # `filename-user`
 
-> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration file enables this rule.
+> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration
+> file enables this rule.
 
 The `filename-user` rule verifies that the filename ends in `.user.js`.
 

@@ -1,8 +1,10 @@
 # `require-attribute-space-prefix`
 
-> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration file enables this rule.
+> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration
+> file enables this rule.
 
-The `require-attribute-space-prefix` rule verifies that the header attribute are prefixed by at least one space.
+The `require-attribute-space-prefix` rule verifies that the header attribute are
+prefixed by at least one space.
 
 ## Why?
 

@@ -1,18 +1,22 @@
 # `no-invalid-metadata`
 
-> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration file enables this rule.
+> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration
+> file enables this rule.
 
-The `no-invalid-metadata` rule verifies that the userscript metadata for the file is valid.
+The `no-invalid-metadata` rule verifies that the userscript metadata for the file
+is valid.
 
 ## Why?
 
-So errors don't come and the metadata is provided for ease of handling userscripts and users in production.
+So errors don't come and the metadata is provided for ease of handling userscripts
+and users in production.
 
 ## Options
 
 This rule has an object option:
 
-- `"top"` (default: `"required"`) requires that the metadata be on the top of the file
+- `"top"` (default: `"required"`) requires that the metadata be on the top of the
+  file
 
 ## Examples
 
@@ -114,4 +118,5 @@ console.log('starting userscript');
 
 ## When Not to Use It
 
-Turn off this rule when you are not linting userscripts or know that any of the above conditions won't cause a problem on your end.
+Turn off this rule when you are not linting userscripts or know that any of the
+above conditions won't cause a problem on your end.

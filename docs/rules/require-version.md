@@ -1,6 +1,7 @@
 # `require-version`
 
-> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration file enables this rule.
+> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration
+> file enables this rule.
 
 The `require-version` rule verifies that a valid version attribute is present.
 
@@ -69,4 +70,6 @@ This rule has a string option:
 
 ## When Not to Use It
 
-Don't use this rule when you are not using versions and pushing to production. It is recommended that you enable this rule with the `"optional"` option in that case.
+Don't use this rule when you are not using versions and pushing to production.
+It is recommended that you enable this rule with the `"optional"` option in that
+case.

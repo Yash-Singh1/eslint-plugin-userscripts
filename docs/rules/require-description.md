@@ -1,12 +1,15 @@
 # `require-description`
 
-> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration file enables this rule.
+> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration
+> file enables this rule.
 
-The `require-description` rule verifies that the description attribute is present and there is no more than one of it.
+The `require-description` rule verifies that the description attribute is present
+and there is no more than one of it.
 
 ## Why?
 
-To give a better description on the userscript and to make sure that there is not accidentally more than one.
+To give a better description on the userscript and to make sure that there is not
+accidentally more than one.
 
 ## Options
 
@@ -76,4 +79,5 @@ This rule has a string option:
 
 ## When Not to Use It
 
-This rule should apply to all userscripts which want to be descriptive about what they do.
+This rule should apply to all userscripts which want to be descriptive about what
+they do.

@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD041 -->
+
 - Introduction
 
   - [Getting Started](README.md)

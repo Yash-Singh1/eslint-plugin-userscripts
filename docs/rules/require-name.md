@@ -1,10 +1,15 @@
 # `require-name`
 
-> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration file enables this rule.
+> ✅ The "extends": "plugin:userscripts/recommended" property in a configuration
+> file enables this rule.
 
-> 🔧 The `--fix` option on the command line can automatically fix some of the problems reported by this rule.
+<!-- markdownlint-disable-next-line MD033 -->
 
-The `require-name` rule verifies that the name attribute is present and there is no more than one of it. It also ensures that it is the first attribute.
+> 🔧 The `--fix` option on the command line can automatically fix some of the
+> problems reported by this rule.
+
+The `require-name` rule verifies that the name attribute is present and there is
+no more than one of it. It also ensures that it is the first attribute.
 
 ## Why?
 
