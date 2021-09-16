@@ -19,7 +19,7 @@ ruleTester.run('require-attribute-space-prefix', rule, {
     //  @supportURL   https://github.com/Yash-Singh1/UserScripts/issues
     //  @downloadURL  https://raw.githubusercontent.com/Yash-Singh1/UserScripts/main/Bottom_Padding_to_Swagger_UI/Bottom_Padding_to_Swagger_UI.user.js
     //  @updateURL    https://raw.githubusercontent.com/Yash-Singh1/UserScripts/main/Bottom_Padding_to_Swagger_UI/Bottom_Padding_to_Swagger_UI.user.js
-    //  ==/UserScript==`,
+    //  ==/UserScript==`
   ],
   invalid: [
     {

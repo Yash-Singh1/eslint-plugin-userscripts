@@ -14,31 +14,31 @@ ruleTester.run('use-download-and-update-url', rule, {
       code: `// ==UserScript==
       // @downloadURL example.com
       // ==/UserScript==`,
+      output: `// ==UserScript==
+      // @downloadURL example.com
+      // @updateURL example.com
+      // ==/UserScript==`,
       errors: [
         {
           messageId: 'missingAttribute',
           data: { attribute: 'updateURL' }
         }
-      ],
-      output: `// ==UserScript==
-      // @downloadURL example.com
-      // @updateURL example.com
-      // ==/UserScript==`
+      ]
     },
     {
       code: `// ==UserScript==
       // @updateURL  example.com
+      // ==/UserScript==`,
+      output: `// ==UserScript==
+      // @updateURL  example.com
+      // @downloadURL  example.com
       // ==/UserScript==`,
       errors: [
         {
           messageId: 'missingAttribute',
           data: { attribute: 'downloadURL' }
         }
-      ],
-      output: `// ==UserScript==
-      // @updateURL  example.com
-      // @downloadURL  example.com
-      // ==/UserScript==`
+      ]
     }
   ]
 });

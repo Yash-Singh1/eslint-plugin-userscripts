@@ -1,0 +1,11 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["eslint-plugin"],
+  "extends": ["eslint:recommended", "plugin:eslint-plugin/recommended"],
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "eslint-plugin/test-case-property-ordering": "error"
+  }
+}

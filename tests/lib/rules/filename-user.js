@@ -5,33 +5,33 @@ var ruleTester = new RuleTester();
 ruleTester.run('filename-user', rule, {
   valid: [
     {
-      code: 'foo()',
       filename: 'hello.user.js',
+      code: 'foo()',
       options: ['always']
     },
     {
-      code: 'var stuff = "hello"; console.log(stuff.slice(1))',
       filename: 'src/userscripts/more/dirs/down/something.user.js',
+      code: 'var stuff = "hello"; console.log(stuff.slice(1))',
       options: ['always']
     },
     {
-      code: '',
       filename: '/home/john/dir/theirfiledir/heythere.user.js',
+      code: '',
       options: ['always']
     },
     {
-      code: 'somecodeimeanfunctiontorun()',
       filename: 'src/userscripts/thing.js',
+      code: 'somecodeimeanfunctiontorun()',
       options: ['never']
     },
     {
-      code: 'somecodeimeanfunctiontorun();//just filename',
       filename: 'thing2.js',
+      code: 'somecodeimeanfunctiontorun();//just filename',
       options: ['never']
     },
     {
-      code: 'var hey = 2',
       filename: '/home/person/thing3eee.js',
+      code: 'var hey = 2',
       options: ['never']
     },
     {
@@ -39,20 +39,21 @@ ruleTester.run('filename-user', rule, {
       options: ['always']
     },
     {
-      code: 'inputfilename',
       filename: '<input>',
+      code: 'inputfilename',
       options: ['always']
     },
     {
-      code: 'textfilename',
       filename: '<text>',
+      code: 'textfilename',
       options: ['always']
     }
   ],
   invalid: [
     {
-      code: 'foo()',
       filename: 'hello.js',
+      code: 'foo()',
+      options: ['always'],
       errors: [
         {
           messageId: 'filenameExtension',
@@ -61,12 +62,12 @@ ruleTester.run('filename-user', rule, {
             newFilename: 'hello.user.js'
           }
         }
-      ],
-      options: ['always']
+      ]
     },
     {
-      code: 'var stuff = "hello"; console.log(stuff.slice(1))',
       filename: 'src/userscripts/more/dirs/down/something.js',
+      code: 'var stuff = "hello"; console.log(stuff.slice(1))',
+      options: ['always'],
       errors: [
         {
           messageId: 'filenameExtension',
@@ -75,12 +76,12 @@ ruleTester.run('filename-user', rule, {
             newFilename: 'src/userscripts/more/dirs/down/something.user.js'
           }
         }
-      ],
-      options: ['always']
+      ]
     },
     {
-      code: '',
       filename: '/home/john/dir/theirfiledir/heythere.js',
+      code: '',
+      options: ['always'],
       errors: [
         {
           messageId: 'filenameExtension',
@@ -89,12 +90,11 @@ ruleTester.run('filename-user', rule, {
             newFilename: '/home/john/dir/theirfiledir/heythere.user.js'
           }
         }
-      ],
-      options: ['always']
+      ]
     },
     {
-      code: 'somecodeimeanfunctiontorun()',
       filename: 'src/userscripts/thing.user.js',
+      code: 'somecodeimeanfunctiontorun()',
       options: ['never'],
       errors: [
         {
@@ -107,8 +107,8 @@ ruleTester.run('filename-user', rule, {
       ]
     },
     {
-      code: 'somecodeimeanfunctiontorun();//just filename',
       filename: 'thing2.user.js',
+      code: 'somecodeimeanfunctiontorun();//just filename',
       options: ['never'],
       errors: [
         {
@@ -121,8 +121,8 @@ ruleTester.run('filename-user', rule, {
       ]
     },
     {
-      code: 'var hey = 2',
       filename: '/home/person/thing3eee.user.js',
+      code: 'var hey = 2',
       options: ['never'],
       errors: [
         {

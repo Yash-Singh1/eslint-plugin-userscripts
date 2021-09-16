@@ -14,31 +14,31 @@ ruleTester.run('use-homepage-and-url', rule, {
       code: `// ==UserScript==
       // @homepage example.com
       // ==/UserScript==`,
+      output: `// ==UserScript==
+      // @homepage example.com
+      // @homepageURL example.com
+      // ==/UserScript==`,
       errors: [
         {
           messageId: 'missingAttribute',
           data: { attribute: 'homepageURL' }
         }
-      ],
-      output: `// ==UserScript==
-      // @homepage example.com
-      // @homepageURL example.com
-      // ==/UserScript==`
+      ]
     },
     {
       code: `// ==UserScript==
       // @homepageURL example.com
+      // ==/UserScript==`,
+      output: `// ==UserScript==
+      // @homepageURL example.com
+      // @homepage example.com
       // ==/UserScript==`,
       errors: [
         {
           messageId: 'missingAttribute',
           data: { attribute: 'homepage' }
         }
-      ],
-      output: `// ==UserScript==
-      // @homepageURL example.com
-      // @homepage example.com
-      // ==/UserScript==`
+      ]
     }
   ]
 });

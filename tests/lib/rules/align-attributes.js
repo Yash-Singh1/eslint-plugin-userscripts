@@ -27,31 +27,31 @@ ruleTester.run('align-attributes', rule, {
       // @name          hello
       // @description   hello again
       // ==/UserScript==`,
+      output: `// ==UserScript==
+      // @name         hello
+      // @description  hello again
+      // ==/UserScript==`,
       errors: [
         {
           messageId: 'spaceMetadata'
         }
-      ],
-      output: `// ==UserScript==
-      // @name         hello
-      // @description  hello again
-      // ==/UserScript==`
+      ]
     },
     {
       code: `// ==UserScript==
       // @name                  some name
       // @description hey there
       `,
-      errors: [
-        {
-          messageId: 'spaceMetadata'
-        }
-      ],
       output: `// ==UserScript==
       // @name            some name
       // @description     hey there
       `,
-      options: [5]
+      options: [5],
+      errors: [
+        {
+          messageId: 'spaceMetadata'
+        }
+      ]
     }
   ]
 });
