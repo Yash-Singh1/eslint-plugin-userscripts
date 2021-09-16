@@ -9,7 +9,7 @@ Implements rules for userscripts metadata in eslint
 You'll first need to install [ESLint](http://eslint.org):
 
 ```sh
-npm i eslint --save-dev
+npm install eslint --save-dev
 ```
 
 Next, install `eslint-plugin-userscripts`:
