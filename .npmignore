@@ -2,3 +2,5 @@ tests/
 docs/
 .github/
 .prettierrc.json
+.eslintrc.json
+.markdownlint.json
