@@ -19,7 +19,10 @@ ruleTester.run('require-name', rule, {
       code: `// ==UserScript==
       // @name This is my name
       // @name This is my second name
-      // ==/UserScript==`,
+      // ==/UserScript==
+      console.info(variable)
+      debugger
+      /* debugging above */`,
       errors: [{ messageId: 'multipleNames' }]
     },
     {

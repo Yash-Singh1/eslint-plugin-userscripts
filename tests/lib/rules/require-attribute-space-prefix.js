@@ -26,7 +26,8 @@ ruleTester.run('require-attribute-space-prefix', rule, {
       code: `// ==UserScript==
       // @name hello
       //@description invalid description
-      // ==/UserScript==`,
+      // ==/UserScript==
+      // more comments`,
       errors: [
         {
           messageId: 'attributeNotPrefixedBySpace'
@@ -37,7 +38,8 @@ ruleTester.run('require-attribute-space-prefix', rule, {
       code: `// ==UserScript==
       //@name hello
       //@description invalid description
-      // ==/UserScript==`,
+      // ==/UserScript==
+      // another comment`,
       errors: [
         {
           messageId: 'attributeNotPrefixedBySpace'

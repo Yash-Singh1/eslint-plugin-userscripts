@@ -31,7 +31,23 @@ ruleTester.run('no-invalid-metadata', rule, {
   ],
   invalid: [
     {
-      code: `// ==UserScript==`,
+      code: '',
+      errors: [
+        {
+          messageId: 'metadataRequired'
+        }
+      ]
+    },
+    {
+      code: 'abcd()',
+      errors: [
+        {
+          messageId: 'metadataRequired'
+        }
+      ]
+    },
+    {
+      code: '// ==UserScript==',
       errors: [
         {
           messageId: 'noClosingMetadata'
@@ -41,7 +57,8 @@ ruleTester.run('no-invalid-metadata', rule, {
     {
       code: `
       // ==UserScript==
-      // ==/UserScript==`,
+      // ==/UserScript==
+      // abc`,
       errors: [
         {
           messageId: 'moveMetadataToTop'

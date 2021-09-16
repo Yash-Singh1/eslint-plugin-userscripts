@@ -17,6 +17,13 @@ ruleTester.run('require-version', rule, {
     },
     {
       code: `// ==UserScript==
+    // @description abc
+    // ==/UserScript==`,
+      options: ['required'],
+      errors: [{ messageId: 'missingAttribute' }]
+    },
+    {
+      code: `// ==UserScript==
       // @version 2.4.5
       // @version 2.4.5
       // ==/UserScript==`,

@@ -52,6 +52,26 @@ ruleTester.run('align-attributes', rule, {
           messageId: 'spaceMetadata'
         }
       ]
+    },
+    {
+      code: `// ==UserScript==
+      // @name                  some name
+      // @description hey there
+      // ==/UserScript==
+      // stuff
+      `,
+      output: `// ==UserScript==
+      // @name            some name
+      // @description     hey there
+      // ==/UserScript==
+      // stuff
+      `,
+      options: [5],
+      errors: [
+        {
+          messageId: 'spaceMetadata'
+        }
+      ]
     }
   ]
 });

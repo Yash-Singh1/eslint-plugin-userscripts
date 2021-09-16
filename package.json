@@ -10,7 +10,7 @@
   "author": "Yash Singh",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "mocha tests --recursive",
+    "test": "nyc  --reporter=lcov --reporter=text mocha tests --recursive",
     "lint": "eslint . && prettier --check ."
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "eslint": "^7.1.0",
     "eslint-plugin-eslint-plugin": "^3.5.3",
     "mocha": "^9.0.3",
+    "nyc": "^15.1.0",
     "prettier": "^2.4.0"
   },
   "engines": {

@@ -7,5 +7,13 @@
   },
   "rules": {
     "eslint-plugin/test-case-property-ordering": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": "tests/**/*.js",
+      "env": {
+        "mocha": true
+      }
+    }
+  ]
 }
