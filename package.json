@@ -27,5 +27,13 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/Yash-Singh1/eslint-plugin-userscripts#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yash-Singh1/eslint-plugin-userscripts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Yash-Singh1/eslint-plugin-userscripts/issues"
+  }
 }
