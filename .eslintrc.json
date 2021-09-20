@@ -1,12 +1,22 @@
 {
   "parser": "babel-eslint",
-  "plugins": ["eslint-plugin"],
-  "extends": ["eslint:recommended", "plugin:eslint-plugin/recommended"],
+  "plugins": ["eslint-plugin", "import", "unicorn"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:eslint-plugin/recommended",
+    "plugin:import/recommended",
+    "plugin:unicorn/recommended"
+  ],
   "env": {
     "node": true
   },
   "rules": {
-    "eslint-plugin/test-case-property-ordering": "error"
+    "eslint-plugin/test-case-property-ordering": "error",
+    "unicorn/prefer-module": "off",
+    "unicorn/filename-case": "off",
+    "unicorn/prefer-array-some": "off",
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/prefer-array-find": "error"
   },
   "overrides": [
     {
