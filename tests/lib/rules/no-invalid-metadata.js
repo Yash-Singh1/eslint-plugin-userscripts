@@ -123,6 +123,20 @@ ruleTester.run('no-invalid-metadata', rule, {
           messageId: 'attributeNotStartsWithAtTheRate'
         }
       ]
+    },
+    {
+      code: `// abc
+      // ==UserScript==
+      // @name hello
+      // @description invalid description`,
+      errors: [
+        {
+          messageId: 'noClosingMetadata'
+        },
+        {
+          messageId: 'moveMetadataToTop'
+        }
+      ]
     }
   ]
 });
