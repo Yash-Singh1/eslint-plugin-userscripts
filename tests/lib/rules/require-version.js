@@ -52,6 +52,12 @@ ruleTester.run('require-version', rule, {
       // @version 0.0.0
       // ==/UserScript==`,
       errors: [{ messageId: 'invalidVersion' }]
+    },
+    {
+      code: `// ==UserScript==
+      // @version 0
+      // ==/UserScript==`,
+      errors: [{ messageId: 'invalidVersion' }]
     }
   ]
 });
