@@ -1,6 +1,7 @@
 tests/
 docs/
 .github/
+.husky/
 .prettierrc.json
 .eslintrc.json
 .markdownlint.json

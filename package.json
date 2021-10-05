@@ -12,7 +12,8 @@
   "scripts": {
     "test": "nyc  --reporter=lcov --reporter=text mocha tests --recursive",
     "lint": "eslint . --ignore-path .gitignore && prettier --check . --ignore-path .gitignore",
-    "lint:fix": "eslint . --ignore-path .gitignore --fix && prettier --write . --ignore-path .gitignore"
+    "lint:fix": "eslint . --ignore-path .gitignore --fix && prettier --write . --ignore-path .gitignore",
+    "prepare": "husky install"
   },
   "dependencies": {
     "requireindex": "~1.2.0"
@@ -23,12 +24,13 @@
     "eslint-plugin-eslint-plugin": "^3.5.3",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-unicorn": "^36.0.0",
+    "husky": "^7.0.2",
     "mocha": "^9.0.3",
     "nyc": "^15.1.0",
     "prettier": "^2.4.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
   },
   "license": "MIT",
   "homepage": "https://github.com/Yash-Singh1/eslint-plugin-userscripts#readme",
