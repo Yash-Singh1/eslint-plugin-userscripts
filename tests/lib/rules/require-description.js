@@ -6,7 +6,18 @@ ruleTester.run('require-description', rule, {
   valid: [
     `// ==UserScript==
     // @description This is my description
-    // ==/UserScript==`
+    // ==/UserScript==`,
+    `// ==UserScript==
+    // @description This is my description
+    // @description:en This is my second description
+    // ==/UserScript==
+    // more comments here`,
+    `// ==UserScript==
+    // @description This is my description
+    // @description:en This is my second description
+    // @description:es This is my third description in Spanish
+    // ==/UserScript==
+    // more comments here`
   ],
   invalid: [
     {
@@ -26,6 +37,15 @@ ruleTester.run('require-description', rule, {
       code: `// ==UserScript==
       // @description This is my description
       // @description This is my second description
+      // ==/UserScript==
+      // more comments here`,
+      errors: [{ messageId: 'multipleDescriptions' }]
+    },
+    {
+      code: `// ==UserScript==
+      // @description This is my description
+      // @description:en This is my second description in English
+      // @description:en This is my third description in English
       // ==/UserScript==
       // more comments here`,
       errors: [{ messageId: 'multipleDescriptions' }]

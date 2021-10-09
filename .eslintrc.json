@@ -12,6 +12,7 @@
   },
   "rules": {
     "eslint-plugin/test-case-property-ordering": "error",
+    "eslint-plugin/test-case-shorthand-strings": "error",
     "unicorn/prefer-module": "off",
     "unicorn/filename-case": "off",
     "unicorn/prefer-array-some": "off",
