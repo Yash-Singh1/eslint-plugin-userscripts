@@ -57,16 +57,6 @@ console.log('starting userscript');
 
 // ==UserScript==
 // @name My Userscript's Name
-// @description Description on my userscript
-// @license ISC
-// ==/UserScript==
-```
-
-```js
-/* eslint userscripts/no-invalid-metadata: ["error", { top: "required" }] */
-
-// ==UserScript==
-// @name My Userscript's Name
 // description Description on my userscript
 // @license ISC
 // ==/UserScript==
