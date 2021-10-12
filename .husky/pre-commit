@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-cp README.md docs/README.md
+cp README.md docs/README.md && git add docs/README.md
