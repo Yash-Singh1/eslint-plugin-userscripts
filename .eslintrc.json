@@ -7,6 +7,9 @@
     "plugin:import/recommended",
     "plugin:unicorn/recommended"
   ],
+  "parserOptions": {
+    "requireConfigFile": false
+  },
   "env": {
     "node": true
   },
