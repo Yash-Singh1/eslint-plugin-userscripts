@@ -19,8 +19,8 @@
     "requireindex": "~1.2.0"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.15.8",
     "acorn": "^8.5.0",
-    "babel-eslint": "^10.1.0",
     "eslint": "^8.0.0",
     "eslint-plugin-eslint-plugin": "^3.5.3",
     "eslint-plugin-import": "^2.24.2",
