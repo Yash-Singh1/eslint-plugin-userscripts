@@ -41,7 +41,7 @@ This rule has no options.
 
 // ==UserScript==
 //  @name         Deletes the X Button
-//  
+//
 //  @description  Some info on my userscript
 // ==/UserScript==
 ```

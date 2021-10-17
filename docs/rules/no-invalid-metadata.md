@@ -37,7 +37,7 @@ This rule has an object option:
 // ==UserScript==
 // @name My Userscript's Name
 // @description Description on my userscript
-// 
+//
 // @version 1.0.0
 // @license ISC
 //
