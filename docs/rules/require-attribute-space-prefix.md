@@ -36,6 +36,16 @@ This rule has no options.
 // ==/UserScript==
 ```
 
+```js
+/* eslint userscripts/require-attribute-space-prefix: "error" */
+
+// ==UserScript==
+//  @name         Deletes the X Button
+//
+//  @description  Some info on my userscript
+// ==/UserScript==
+```
+
 👎︎ Examples of **incorrect** code for this rule
 
 ```js
