@@ -13,6 +13,7 @@ ruleTester.run('require-name', rule, {
       code: `// ==UserScript==
     // @description abc
     // ==/UserScript==`,
+      output: null,
       errors: [{ messageId: 'missingAttribute' }]
     },
     {
@@ -23,6 +24,7 @@ ruleTester.run('require-name', rule, {
       console.info(variable)
       debugger
       /* debugging above */`,
+      output: null,
       errors: [{ messageId: 'multipleNames' }]
     },
     {
