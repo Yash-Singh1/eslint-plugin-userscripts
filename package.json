@@ -13,7 +13,7 @@
     "test": "nyc  --reporter=lcov --reporter=text mocha tests --recursive",
     "lint": "eslint . --ignore-path .gitignore && prettier --check . --ignore-path .gitignore",
     "lint:fix": "eslint . --ignore-path .gitignore --fix && prettier --write . --ignore-path .gitignore",
-    "prepare": "husky install"
+    "postinstall": "husky install"
   },
   "dependencies": {
     "requireindex": "~1.2.0"
