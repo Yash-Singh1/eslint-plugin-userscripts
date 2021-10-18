@@ -3,11 +3,11 @@
 > ✅ The "extends": "plugin:userscripts/recommended" property in a configuration
 > file enables this rule.
 
-The `no-invalid-grant` rule verifies that the argument passed to @grant is valid.
+The `no-invalid-grant` rule verifies that the argument passed to `@grant` is valid.
 
 ## Why?
 
-So as to avoid typos that might result in "GM_* is not defined" errors.
+So as to avoid typos that might result in `GM_* is not defined` errors.
 
 ## Examples
 
@@ -42,4 +42,4 @@ So as to avoid typos that might result in "GM_* is not defined" errors.
 
 ## When Not to Use It
 
-Turn off this rule if you don't want to check the validity of @grant arguments.
+Turn off this rule if you don't want to check the validity of `@grant` arguments.
