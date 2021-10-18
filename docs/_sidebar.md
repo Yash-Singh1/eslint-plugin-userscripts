@@ -7,6 +7,7 @@
 - Rules
 
   - [`filename-user`](rules/filename-user.md)
+  - [`no-invalid-grant`](rules/no-invalid-grant.md)
   - [`no-invalid-metadata`](rules/no-invalid-metadata.md)
   - [`require-name`](rules/require-name.md)
   - [`require-description`](rules/require-description.md)
