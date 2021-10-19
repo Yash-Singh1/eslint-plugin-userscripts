@@ -33,7 +33,7 @@ Add `userscripts` to the plugins section of your `.eslintrc` configuration file:
 | Rule                                                                             | Description                                                            | Recommended |
 | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | :---------: |
 | [`filename-user`](docs/rules/filename-user.md)                                   | Ensures userscripts end with .user.js                                  |     ✅      |
-| [`no-invalid-grant`](docs/rules/no-invalid-grant.md)                             | Ensures the argument passed to @grant is valid                         |     ✅      |
+| [`no-invalid-grant`](docs/rules/no-invalid-grant.md)                             | Ensures the argument passed to `@grant` is valid                       |     ✅      |
 | [`no-invalid-metadata`](docs/rules/no-invalid-metadata.md)                       | Ensures userscripts have valid metadata                                |     ✅      |
 | [`require-name`](docs/rules/require-name.md)                                     | Ensures userscripts have a name                                        |     ✅      |
 | [`require-description`](docs/rules/require-description.md)                       | Ensures userscripts have a description                                 |     ✅      |
