@@ -12,7 +12,9 @@ ruleTester.run('no-invalid-grant', rule, {
     // @grant   GM_getValue
     // @grant   GM.getValue
     // @grant   GM_getResourceURL
-    // @grant   GM.getResourceURL
+    // @grant   GM.getResourceUrl
+    // @grant   GM_xmlhttpRequest
+    // @grant   GM.xmlHttpRequest
     // @grant   unsafeWindow
     // @grant   window.onurlchange
     // ==/UserScript==
