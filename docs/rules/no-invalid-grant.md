@@ -22,7 +22,9 @@ So as to avoid typos that might result in `GM_* is not defined` errors.
 // @grant   GM_getValue
 // @grant   GM.getValue
 // @grant   GM_getResourceURL
-// @grant   GM.getResourceURL
+// @grant   GM.getResourceUrl
+// @grant   GM_xmlhttpRequest
+// @grant   GM.xmlHttpRequest
 // @grant   unsafeWindow
 // @grant   window.onurlchange
 // ==/UserScript==
