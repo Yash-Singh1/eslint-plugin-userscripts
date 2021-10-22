@@ -55,7 +55,7 @@ ruleTester.run('no-invalid-headers', rule, {
       // @whitelisted     whitelisted value
       // @notwhitelisted  this header is not whitelisted
       // ==/UserScript==`,
-      options: [{ exclude: ['whitelisted'] }],
+      options: [{ allowed: ['whitelisted'] }],
       errors: [
         {
           messageId: 'invalidHeader',

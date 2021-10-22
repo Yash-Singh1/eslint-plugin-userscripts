@@ -13,16 +13,16 @@ So as to avoid typos in the userscript headers which might have unintended conse
 
 This rule has an object option:
 
-- `"exclude"`: an array of headers to whitelist
+- `"allowed"`: an array of headers to whitelist
 
 ## Examples
 
-### `exclude`: `[]`
+### `allowed`: `[]`
 
 👍 Examples of **correct** code for this rule
 
 ```js
-/* eslint userscripts/no-invalid-headers: ["error", { exclude: [] }] */
+/* eslint userscripts/no-invalid-headers: ["error", { allowed: [] }] */
 
 // ==UserScript==
 // @name           Bottom Padding to Swagger UI
@@ -41,7 +41,7 @@ This rule has an object option:
 👎︎ Examples of **incorrect** code for this rule
 
 ```js
-/* eslint userscripts/no-invalid-headers: ["error", { exclude: [] }] */
+/* eslint userscripts/no-invalid-headers: ["error", { allowed: [] }] */
 
 // ==UserScript==
 // @naem          MyName
@@ -50,12 +50,12 @@ This rule has an object option:
 // ==/UserScript==
 ```
 
-### `exclude`: `[ "whitelisted" ]`
+### `allowed`: `[ "whitelisted" ]`
 
 👍 Examples of **correct** code for this rule
 
 ```js
-/* eslint userscripts/no-invalid-headers: ["error", { exclude: [ "whitelisted" ] }] */
+/* eslint userscripts/no-invalid-headers: ["error", { allowed: [ "whitelisted" ] }] */
 
 // ==UserScript==
 // @name           Bottom Padding to Swagger UI
@@ -75,7 +75,7 @@ This rule has an object option:
 👎︎ Examples of **incorrect** code for this rule
 
 ```js
-/* eslint userscripts/no-invalid-headers: ["error", { exclude: [ "whitelisted" ] }] */
+/* eslint userscripts/no-invalid-headers: ["error", { allowed: [ "whitelisted" ] }] */
 
 // ==UserScript==
 // @name            MyName
