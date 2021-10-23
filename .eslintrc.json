@@ -1,11 +1,12 @@
 {
   "parser": "@babel/eslint-parser",
-  "plugins": ["eslint-plugin", "import", "unicorn"],
+  "plugins": ["eslint-plugin", "import", "unicorn", "eslint-comments"],
   "extends": [
     "eslint:recommended",
     "plugin:eslint-plugin/recommended",
     "plugin:import/recommended",
-    "plugin:unicorn/recommended"
+    "plugin:unicorn/recommended",
+    "plugin:eslint-comments/recommended"
   ],
   "parserOptions": {
     "requireConfigFile": false
@@ -22,7 +23,8 @@
     "unicorn/no-array-reduce": "off",
     "unicorn/no-nested-ternary": "off",
     "unicorn/prefer-array-find": "error",
-    "unicorn/no-null": "off"
+    "unicorn/no-null": "off",
+    "eslint-comments/no-unused-disable": "error"
   },
   "overrides": [
     {
