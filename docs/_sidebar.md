@@ -16,3 +16,4 @@
   - [`use-homepage-and-url`](rules/use-homepage-and-url.md)
   - [`use-download-and-update-url`](rules/use-download-and-update-url.md)
   - [`align-attributes`](rules/align-attributes.md)
+  - [`no-invalid-headers`](rules/no-invalid-headers.md)
