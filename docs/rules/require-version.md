@@ -40,7 +40,7 @@ This rule has a string option:
 // ==UserScript==
 // @name         Deletes the X Button
 // @description  Some info on my userscript
-// @version      0.0
+// @version      @.€.$
 // ==/UserScript==
 ```
 
@@ -64,7 +64,7 @@ This rule has a string option:
 // ==UserScript==
 // @name         Deletes the X Button
 // @description  Some info on my userscript
-// @version      0.0
+// @version      .5.6
 // ==/UserScript==
 ```
 

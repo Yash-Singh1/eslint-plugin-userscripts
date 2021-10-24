@@ -5,7 +5,31 @@ var ruleTester = new RuleTester();
 ruleTester.run('require-version', rule, {
   valid: [
     `// ==UserScript==
+    // @version Alpha-v1
+    // ==/UserScript==`,
+    `// ==UserScript==
+    // @version 0.0.0
+    // ==/UserScript==`,
+    `// ==UserScript==
+    // @version 000.0.1
+    // ==/UserScript==`,
+    `// ==UserScript==
+    // @version 0.6pre4
+    // ==/UserScript==`,
+    `// ==UserScript==
+    // @version 1.00
+    // ==/UserScript==`,
+    `// ==UserScript==
     // @version 1.0.0
+    // ==/UserScript==`,
+    `// ==UserScript==
+    // @version 1.-1
+    // ==/UserScript==`,
+    `// ==UserScript==
+    // @version 1.1a
+    // ==/UserScript==`,
+    `// ==UserScript==
+    // @version 1.1.1.1.2.0.1.1.1.1.1
     // ==/UserScript==`
   ],
   invalid: [
@@ -49,13 +73,7 @@ ruleTester.run('require-version', rule, {
     },
     {
       code: `// ==UserScript==
-      // @version 0.0.0
-      // ==/UserScript==`,
-      errors: [{ messageId: 'invalidVersion' }]
-    },
-    {
-      code: `// ==UserScript==
-      // @version 0
+      // @version @.€.$
       // ==/UserScript==`,
       errors: [{ messageId: 'invalidVersion' }]
     }
