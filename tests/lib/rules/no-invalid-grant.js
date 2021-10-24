@@ -29,9 +29,10 @@ ruleTester.run('no-invalid-grant', rule, {
     {
       // one of the @grant values doesn't exist
       code: `// ==UserScript==
-      // @grant GM_doesNotExist
-      // @grant GM.doesNotExist
-      // @grant GM_notification
+      // @grant  GM_doesNotExist
+      // @grant  GM.doesNotExist
+      // @grant  GM_notification
+      // @grant  GM.getResourceURL
       // ==/UserScript==`,
       errors: [
         {
@@ -41,6 +42,10 @@ ruleTester.run('no-invalid-grant', rule, {
         {
           messageId: 'grantHasInvalidArgument',
           data: { argument: 'GM.doesNotExist' }
+        },
+        {
+          messageId: 'grantHasInvalidArgument',
+          data: { argument: 'GM.getResourceURL' }
         }
       ]
     },
