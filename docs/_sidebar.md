@@ -17,3 +17,6 @@
   - [`use-download-and-update-url`](rules/use-download-and-update-url.md)
   - [`align-attributes`](rules/align-attributes.md)
   - [`no-invalid-headers`](rules/no-invalid-headers.md)
+
+- Utilities
+  - [Create Validator](utils/createValidator.md)
