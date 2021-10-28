@@ -29,7 +29,8 @@
     "husky": "^7.0.2",
     "mocha": "^9.0.3",
     "nyc": "^15.1.0",
-    "prettier": "^2.4.0"
+    "prettier": "^2.4.0",
+    "prettier-plugin-jsdoc": "^0.3.24"
   },
   "peerDependencies": {
     "eslint": ">=6.0.0 <=^8.0.0"
