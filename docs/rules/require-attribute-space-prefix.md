@@ -4,7 +4,7 @@
 > file enables this rule.
 
 The `require-attribute-space-prefix` rule verifies that the header attribute are
-prefixed by at least one space.
+prefixed by one space.
 
 ## Why?
 
@@ -31,8 +31,8 @@ This rule has no options.
 /* eslint userscripts/require-attribute-space-prefix: "error" */
 
 // ==UserScript==
-//  @name         Deletes the X Button
-//  @description  Some info on my userscript
+// @name         Deletes the X Button
+// @description  Some info on my userscript
 // ==/UserScript==
 ```
 
@@ -40,9 +40,9 @@ This rule has no options.
 /* eslint userscripts/require-attribute-space-prefix: "error" */
 
 // ==UserScript==
-//  @name         Deletes the X Button
+// @name         Deletes the X Button
 //
-//  @description  Some info on my userscript
+// @description  Some info on my userscript
 // ==/UserScript==
 ```
 
@@ -61,8 +61,8 @@ This rule has no options.
 /* eslint userscripts/require-attribute-space-prefix: "error" */
 
 // ==UserScript==
-//@description  Some info on my userscript
-//@name         Deletes the X Button
+//  @description  Some info on my userscript
+//  @name         Deletes the X Button
 // ==/UserScript==
 ```
 

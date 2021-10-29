@@ -111,6 +111,18 @@ ruleTester.run('no-invalid-metadata', rule, {
     },
     {
       code: `// ==UserScript==
+        // @name foo
+        ////
+        // @description bar
+        // ==/UserScript==`,
+      errors: [
+        {
+          messageId: 'attributeNotStartsWithAtTheRate'
+        }
+      ]
+    },
+    {
+      code: `// ==UserScript==
       // @name hello
       // description invalid description
       // ==/UserScript==`,

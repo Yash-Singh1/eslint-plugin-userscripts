@@ -41,5 +41,5 @@ Add `userscripts` to the plugins section of your `.eslintrc` configuration file:
 | [`use-homepage-and-url`](docs/rules/use-homepage-and-url.md)                     | Ensures that for each `homepage` attribute, `homepageURL` is also used |     ✅      |
 | [`use-download-and-update-url`](docs/rules/use-download-and-update-url.md)       | Ensures that for each `downloadURL` there is a `updateURL`             |     ✅      |
 | [`align-attributes`](docs/rules/align-attributes.md)                             | Ensures that attributes are spaced out and aligned                     |     ✅      |
-| [`require-attribute-space-prefix`](docs/rules/require-attribute-space-prefix.md) | Ensure that attributes are prefixed by a space                         |     ✅      |
+| [`require-attribute-space-prefix`](docs/rules/require-attribute-space-prefix.md) | Ensure that attributes are prefixed by one space                       |     ✅      |
 | [`no-invalid-headers`](docs/rules/no-invalid-headers.md)                         | Ensures userscripts have valid headers                                 |     ✅      |
