@@ -20,3 +20,4 @@
 
 - Utilities
   - [Create Validator](utils/createValidator.md)
+  - [Parser](utils/parser.md)
