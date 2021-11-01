@@ -37,5 +37,9 @@ jobs:
             echo "README.md and docs/README.md are in sync"
           else
             echo "Make sure that the README.md and docs/README.md are in sync"
+            echo
+            echo "Difference:"
+            echo
+            git diff
             exit 1
           fi
