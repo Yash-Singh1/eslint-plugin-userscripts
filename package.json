@@ -37,7 +37,7 @@
     "eslint": ">=6.0.0 <=^8.0.0"
   },
   "engines": {
-    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+    "node": ">=14.0.0 <18.0.0"
   },
   "license": "MIT",
   "homepage": "https://github.com/Yash-Singh1/eslint-plugin-userscripts#readme",
