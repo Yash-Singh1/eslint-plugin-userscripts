@@ -2,5 +2,6 @@
   "line-length": {
     "code_blocks": false,
     "tables": false
-  }
+  },
+  "no-inline-html": false
 }

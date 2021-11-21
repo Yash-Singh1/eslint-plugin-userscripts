@@ -42,10 +42,6 @@ ruleTester.run('no-invalid-grant', rule, {
         {
           messageId: 'grantHasInvalidArgument',
           data: { argument: 'GM.doesNotExist' }
-        },
-        {
-          messageId: 'grantHasInvalidArgument',
-          data: { argument: 'GM.getResourceURL' }
         }
       ]
     },

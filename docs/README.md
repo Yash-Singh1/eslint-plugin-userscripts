@@ -43,3 +43,4 @@ Add `userscripts` to the plugins section of your `.eslintrc` configuration file:
 | [`align-attributes`](docs/rules/align-attributes.md)                             | Ensures that attributes are spaced out and aligned                     |     ✅      |
 | [`require-attribute-space-prefix`](docs/rules/require-attribute-space-prefix.md) | Ensure that attributes are prefixed by one space                       |     ✅      |
 | [`no-invalid-headers`](docs/rules/no-invalid-headers.md)                         | Ensures userscripts have valid headers                                 |     ✅      |
+| [`compat-grant`](docs/rules/compat-grant.md)                                     | Ensures your `@grant` permissions are supported                        |             |
