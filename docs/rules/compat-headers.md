@@ -1,11 +1,11 @@
-# `compat-grant`
+# `compat-headers`
 
-The `compat-grant` rule verifies that your `@grant` declarations are compatible
+The `compat-headers` rule verifies that your header declarations are compatible
 with your target userscript managers.
 
 ## Why?
 
-Ensures that you aren't using permissions that you don't support or don't want
+Ensures that you aren't using declarations that you don't support or don't want
 to support.
 
 ## Settings
@@ -22,7 +22,7 @@ support them) with their values being semver [version constraints](https://githu
 This rule has an object option with the following properties:
 
 - `"requireAllCompatible"` (default: `false`) requires that all configured
-  userscript managers support the grant permission used
+  userscript managers support the header used
 
 ## Examples
 
@@ -31,11 +31,9 @@ This rule has an object option with the following properties:
 👍 Examples of **correct** code for this rule
 
 ```js
-/* eslint userscripts/compat-grant: ["error", { "requireAllCompatible": false }] */
+/* eslint userscripts/compat-headers: ["error", { "requireAllCompatible": false }] */
 
 // ==UserScript==
-// @grant         GM.openInTab
-// @grant         GM_openInTab
 // @downloadURL   example.com
 // ==/UserScript==
 
@@ -57,7 +55,7 @@ This rule has an object option with the following properties:
 </details>
 
 ```js
-/* eslint userscripts/compat-grant: ["error", { "requireAllCompatible": false }] */
+/* eslint userscripts/compat-headers: ["error", { "requireAllCompatible": false }] */
 
 // ==UserScript==
 // @grant      unsafeWindow
@@ -71,7 +69,7 @@ This rule has an object option with the following properties:
 ```json
 {
   "userscriptVersions": {
-    "tampermonkey": ">3 <4",
+    "tampermonkey": ">3.1 <4",
     "greasemonkey": ">4"
   }
 }
@@ -82,7 +80,7 @@ This rule has an object option with the following properties:
 👎︎ Examples of **incorrect** code for this rule
 
 ```js
-/* eslint userscripts/compat-grant: ["error", { "requireAllCompatible": false }] */
+/* eslint userscripts/compat-headers: ["error", { "requireAllCompatible": false }] */
 
 // ==UserScript==
 // @name   my script name
@@ -93,11 +91,10 @@ This rule has an object option with the following properties:
 <details>
   <summary>Show Settings</summary>
 
-```json
+```jsonc
 {
   "userscriptVersions": {
-    "tampermonkey": ">3 <4",
-    "greasemonkey": ">4"
+    "greasemonkey": ">=4 <4.2" // Greasemonkey removed support for localized names/descriptions in GM4 and readded it in GM4.11
   }
 }
 ```
@@ -105,10 +102,10 @@ This rule has an object option with the following properties:
 </details>
 
 ```js
-/* eslint userscripts/compat-grant: ["error", { "requireAllCompatible": false }] */
+/* eslint userscripts/compat-headers: ["error", { "requireAllCompatible": false }] */
 
 // ==UserScript==
-// @grant   GM.getValue
+// @exclude-match   ...
 // ==/UserScript==
 ```
 
@@ -118,7 +115,7 @@ This rule has an object option with the following properties:
 ```jsonc
 {
   "userscriptVersions": {
-    "tampermonkey": "<4" // GM.* is only supported 4.5 and above for tampermonkey
+    "tampermonkey": "<4" // `exclude-match` is violentmonkey only
   }
 }
 ```
@@ -130,11 +127,10 @@ This rule has an object option with the following properties:
 👍 Examples of **correct** code for this rule
 
 ```js
-/* eslint userscripts/compat-grant: "error" */
+/* eslint userscripts/compat-headers: "error" */
 
 // ==UserScript==
-// @grant   GM.getValue
-// @grant   GM.deleteValue
+// @version   0.0.1
 // ==/UserScript==
 ```
 
@@ -146,7 +142,7 @@ This rule has an object option with the following properties:
   "userscriptVersions": {
     "tampermonkey": ">4.5",
     "violentmonkey": "*",
-    "greasemonkey": ">=4.1"
+    "greasemonkey": ">4"
   }
 }
 ```
@@ -154,11 +150,10 @@ This rule has an object option with the following properties:
 </details>
 
 ```js
-/* eslint userscripts/compat-grant: "error" */
+/* eslint userscripts/compat-headers: "error" */
 
 // ==UserScript==
-// @grant GM.log
-// @grant  GM_log
+// @run-at context-menu
 // ==/UserScript==
 ```
 
@@ -169,7 +164,6 @@ This rule has an object option with the following properties:
 {
   "userscriptVersions": {
     "tampermonkey": ">4.5",
-    "violentmonkey": "*",
     "greasemonkey": ">=4.1"
   }
 }
@@ -180,10 +174,10 @@ This rule has an object option with the following properties:
 👎︎ Examples of **incorrect** code for this rule
 
 ```js
-/* eslint userscripts/compat-grant: "error" */
+/* eslint userscripts/compat-headers: "error" */
 
 // ==UserScript==
-// @grant      GM.log
+// @version   0.0.1
 // ==/UserScript==
 ```
 
@@ -194,8 +188,8 @@ This rule has an object option with the following properties:
 {
   "userscriptVersions": {
     "tampermonkey": ">4.5",
-    "violentmonkey": "<=2.13.0", // As of 2.13.0, GM.log is not supported
-    "greasemonkey": ">=4.1"
+    "violentmonkey": "*",
+    "greasemonkey": "<0.9.0" // GM supports `version` as of 0.9.0
   }
 }
 ```
@@ -203,10 +197,10 @@ This rule has an object option with the following properties:
 </details>
 
 ```js
-/* eslint userscripts/compat-grant: "error" */
+/* eslint userscripts/compat-headers: "error" */
 
 // ==UserScript==
-// @grant   GM_webRequest
+// @exclude-match *
 // ==/UserScript==
 ```
 
@@ -216,9 +210,8 @@ This rule has an object option with the following properties:
 ```jsonc
 {
   "userscriptVersions": {
-    "tampermonkey": ">4.5", // GM_webRequest is TamperMonkey specific
-    "violentmonkey": "<=2.13.0",
-    "greasemonkey": ">=4.1"
+    "tampermonkey": ">4.5",
+    "violentmonkey": "*"
   }
 }
 ```
