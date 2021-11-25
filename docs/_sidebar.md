@@ -18,7 +18,7 @@
   - [`align-attributes`](rules/align-attributes.md)
   - [`no-invalid-headers`](rules/no-invalid-headers.md)
   - [`compat-grant`](rules/compat-grant.md)
-  - [`compat-headers`](docs/rules/compat-headers.md)
+  - [`compat-headers`](rules/compat-headers.md)
 
 - Utilities
   - [Create Validator](utils/createValidator.md)
