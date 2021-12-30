@@ -13,7 +13,7 @@ on:
 
 jobs:
   test:
-    name: Run tests
+    name: All Rules Everywhere Test
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
