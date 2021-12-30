@@ -49,7 +49,7 @@ jobs:
         id: metadata
         uses: dependabot/fetch-metadata@v1.1.1
         with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
 
       - name: Approve a PR
         if: steps.wait-for-build.outputs.conclusion == 'success' && steps.dependabot-metadata.outputs.update-type != 'version-update:semver-major'
