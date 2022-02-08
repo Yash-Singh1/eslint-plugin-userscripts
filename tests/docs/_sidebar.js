@@ -32,8 +32,7 @@ module.exports = {
       (token) => token.type === 'inline'
     )) {
       if (token.line === '- Rules') continue;
-      token.line = token.line.trim();
-      const ruleName = token.line.split('`')[1];
+      const ruleName = token.line.trim().split('`')[1];
       if (!rules.includes(ruleName)) {
         onError({
           lineNumber: token.lineNumber,
