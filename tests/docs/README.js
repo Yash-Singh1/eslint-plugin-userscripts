@@ -22,8 +22,7 @@ module.exports = {
     for (const token of params.tokens.filter(
       (token) => token.type === 'td_open'
     )) {
-      token.line = token.line.trim().slice(4);
-      const ruleName = token.line.split('`')[0];
+      const ruleName = token.line.trim().slice(4).split('`')[0];
       if (!rules.includes(ruleName)) {
         onError({
           lineNumber: token.lineNumber,
