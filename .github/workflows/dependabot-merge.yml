@@ -52,14 +52,14 @@ jobs:
           github-token: '${{ secrets.GITHUB_TOKEN }}'
 
       - name: Approve a PR
-        if: steps.wait-for-build.outputs.conclusion == 'success' && steps.dependabot-metadata.outputs.update-type != 'version-update:semver-major'
+        if: steps.wait-for-build.outputs.conclusion == 'success' && steps.metadata.outputs.update-type != 'version-update:semver-major'
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Auto-merge Dependabot PRs
-        if: steps.wait-for-build.outputs.conclusion == 'success' && steps.dependabot-metadata.outputs.update-type != 'version-update:semver-major'
+        if: steps.wait-for-build.outputs.conclusion == 'success' && steps.metadata.outputs.update-type != 'version-update:semver-major'
         run: gh pr merge --auto --merge "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
