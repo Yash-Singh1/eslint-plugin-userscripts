@@ -41,25 +41,49 @@ jobs:
         id: wait-for-build4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: Run tests
+          checkName: Run tests (14.x)
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Wait for build to succeed
+        uses: fountainhead/action-wait-for-check@v1.0.0
+        id: wait-for-build5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          checkName: Run tests (15.x)
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Wait for build to succeed
+        uses: fountainhead/action-wait-for-check@v1.0.0
+        id: wait-for-build6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          checkName: Run tests (16.x)
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Wait for build to succeed
+        uses: fountainhead/action-wait-for-check@v1.0.0
+        id: wait-for-build7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          checkName: Run tests (17.x)
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
       - name: Dependabot metadata
-        if: steps.wait-for-build.outputs.conclusion == 'success' && steps.wait-for-build2.outputs.conclusion == 'success' && steps.wait-for-build3.outputs.conclusion == 'success' && steps.wait-for-build4.outputs.conclusion == 'success'
+        if: steps.wait-for-build.outputs.conclusion == 'success' && steps.wait-for-build2.outputs.conclusion == 'success' && steps.wait-for-build3.outputs.conclusion == 'success' && steps.wait-for-build4.outputs.conclusion == 'success' && steps.wait-for-build5.outputs.conclusion == 'success' && steps.wait-for-build6.outputs.conclusion == 'success' && steps.wait-for-build7.outputs.conclusion == 'success'
         id: metadata
         uses: dependabot/fetch-metadata@v1.3.0
         with:
           github-token: '${{ secrets.GITHUB_TOKEN }}'
 
       - name: Approve a PR
-        if: steps.wait-for-build.outputs.conclusion == 'success' && steps.wait-for-build2.outputs.conclusion == 'success' && steps.wait-for-build3.outputs.conclusion == 'success' && steps.wait-for-build4.outputs.conclusion == 'success' && steps.metadata.outputs.update-type != 'version-update:semver-major'
+        if: steps.wait-for-build.outputs.conclusion == 'success' && steps.wait-for-build2.outputs.conclusion == 'success' && steps.wait-for-build3.outputs.conclusion == 'success' && steps.wait-for-build4.outputs.conclusion == 'success' && steps.wait-for-build5.outputs.conclusion == 'success' && steps.wait-for-build6.outputs.conclusion == 'success' && steps.wait-for-build7.outputs.conclusion == 'success' && steps.metadata.outputs.update-type != 'version-update:semver-major'
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Auto-merge Dependabot PRs
-        if: steps.wait-for-build.outputs.conclusion == 'success' && steps.metadata.outputs.update-type != 'version-update:semver-major'
+        if: steps.wait-for-build.outputs.conclusion == 'success' && steps.wait-for-build2.outputs.conclusion == 'success' && steps.wait-for-build3.outputs.conclusion == 'success' && steps.wait-for-build4.outputs.conclusion == 'success' && steps.wait-for-build5.outputs.conclusion == 'success' && steps.wait-for-build6.outputs.conclusion == 'success' && steps.wait-for-build7.outputs.conclusion == 'success' && steps.metadata.outputs.update-type != 'version-update:semver-major'
         run: gh pr merge --auto --merge "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
