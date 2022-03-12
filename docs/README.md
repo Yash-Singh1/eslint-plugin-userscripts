@@ -42,6 +42,7 @@ Add `userscripts` to the plugins section of your `.eslintrc` configuration file:
 | [`use-download-and-update-url`](docs/rules/use-download-and-update-url.md)       | Ensures that for each `downloadURL` there is a `updateURL`             |     ✅      |
 | [`align-attributes`](docs/rules/align-attributes.md)                             | Ensures that attributes are spaced out and aligned                     |     ✅      |
 | [`require-attribute-space-prefix`](docs/rules/require-attribute-space-prefix.md) | Ensure that attributes are prefixed by one space                       |     ✅      |
+| [`metadata-spacing`](docs/rules/metadata-spacing.md)                             | Ensures there is a newline between the metadata and the code           |     ✅      |
 | [`no-invalid-headers`](docs/rules/no-invalid-headers.md)                         | Ensures userscripts have valid headers                                 |     ✅      |
 | [`compat-grant`](docs/rules/compat-grant.md)                                     | Ensures your `@grant` permissions are supported                        |             |
 | [`compat-headers`](docs/rules/compat-headers.md)                                 | Ensures your headers are supported                                     |             |

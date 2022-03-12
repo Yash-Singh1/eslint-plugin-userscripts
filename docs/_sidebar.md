@@ -16,6 +16,7 @@
   - [`use-homepage-and-url`](rules/use-homepage-and-url.md)
   - [`use-download-and-update-url`](rules/use-download-and-update-url.md)
   - [`align-attributes`](rules/align-attributes.md)
+  - [`metadata-spacing`](rules/metadata-spacing.md)
   - [`no-invalid-headers`](rules/no-invalid-headers.md)
   - [`compat-grant`](rules/compat-grant.md)
   - [`compat-headers`](rules/compat-headers.md)
