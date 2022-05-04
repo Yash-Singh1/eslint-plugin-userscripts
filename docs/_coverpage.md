@@ -7,4 +7,4 @@
 
 <!-- background color -->
 
-![color](#a11616)
+![color](#2f2f2f)
