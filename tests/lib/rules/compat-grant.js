@@ -37,6 +37,18 @@ ruleTester.run('compat-grant', rule, {
           greasemonkey: '*'
         }
       }
+    },
+    {
+      code: `// ==UserScript==
+  // @grant GM_getValue
+  // ==/UserScript==`,
+      options: [{ requireAllCompatible: true }],
+      settings: {
+        userscriptVersions: {
+          tampermonkey: '*',
+          greasemonkey: '*'
+        }
+      }
     }
   ],
   invalid: [
