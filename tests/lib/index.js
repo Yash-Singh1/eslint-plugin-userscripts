@@ -1,5 +1,6 @@
 const requireindex = require('requireindex');
 const fs = require('fs');
+const path = require('path');
 
 require('should');
 
@@ -14,4 +15,6 @@ describe('config', () => {
   });
 });
 
-module.exports = requireindex(__dirname.replace(/\/tests(\/lib)$/, '$1/rules'));
+module.exports = requireindex(
+  __dirname.replace(/[/\\]tests([/\\]lib)$/, `$1${path.sep}rules`)
+);

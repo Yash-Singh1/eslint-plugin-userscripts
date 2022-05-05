@@ -11,6 +11,7 @@ ruleTester.run('align-attributes', rule, {
     // ==/UserScript==`,
     `// ==UserScript==
     // @name         hello
+    // @noframes
     // @description  hello also
     // ==/UserScript==`,
     {
@@ -41,10 +42,12 @@ ruleTester.run('align-attributes', rule, {
       code: `// ==UserScript==
       // @name                  some name
       // @description hey there
+      // @nowrap
       `,
       output: `// ==UserScript==
       // @name            some name
       // @description     hey there
+      // @nowrap
       `,
       options: [5],
       errors: [
