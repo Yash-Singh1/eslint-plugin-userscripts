@@ -3,6 +3,11 @@
 > ✅ The "extends": "plugin:userscripts/recommended" property in a configuration
 > file enables this rule.
 
+<!-- markdownlint-disable-next-line no-blanks-blockquote -->
+
+> 🔧 The `--fix` option on the command line can automatically fix some of the
+> problems reported by this rule.
+
 The `metadata-spacing` rule ensures that there is a newline between the code and
 the metadata.
 
