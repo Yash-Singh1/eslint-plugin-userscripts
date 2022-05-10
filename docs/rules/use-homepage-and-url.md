@@ -3,7 +3,7 @@
 > ✅ The "extends": "plugin:userscripts/recommended" property in a configuration
 > file enables this rule.
 
-<!-- markdownlint-disable-next-line MD033 -->
+<!-- markdownlint-disable-next-line no-blanks-blockquote -->
 
 > 🔧 The `--fix` option on the command line can automatically fix some of the
 > problems reported by this rule.
