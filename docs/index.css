@@ -1,0 +1,33 @@
+.markdown-section tr:nth-child(2n) {
+  background-color: rgb(80 80 80);
+}
+
+.search {
+  border-bottom: none;
+}
+
+.search input[type='search'] {
+  transition: ease-in-out 0.25s;
+}
+
+* {
+  font-family: Comic Mono !important;
+}
+
+div.cover-main h1 {
+  font-weight: bold;
+}
+
+.app-name-link {
+  font-family: initial !important;
+  white-space: nowrap;
+}
+
+.cover .cover-main {
+  margin: none;
+  max-width: none;
+}
+
+.markdown-section a {
+  text-underline-offset: 1px;
+}

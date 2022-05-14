@@ -8,13 +8,13 @@ Implements rules for userscripts in `eslint`.
 
 You'll first need to install [ESLint](http://eslint.org):
 
-```sh
+```shell
 npm install eslint --save-dev
 ```
 
 Next, install `eslint-plugin-userscripts`:
 
-```sh
+```shell
 npm install eslint-plugin-userscripts --save-dev
 ```
 

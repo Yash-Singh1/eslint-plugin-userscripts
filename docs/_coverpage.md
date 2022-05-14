@@ -7,4 +7,4 @@
 
 <!-- background color -->
 
-![color](#2f2f2f)
+![](/homepage.png)
