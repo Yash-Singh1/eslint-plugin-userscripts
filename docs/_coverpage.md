@@ -4,7 +4,3 @@
 
 [GitHub](https://github.com/Yash-Singh1/eslint-plugin-userscripts/)
 [Get Started](?id=main)
-
-<!-- background color -->
-
-![](/homepage.png)

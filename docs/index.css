@@ -16,6 +16,7 @@
 
 div.cover-main h1 {
   font-weight: bold;
+  color: var(--coverpage_header_color);
 }
 
 .app-name-link {
@@ -24,7 +25,6 @@ div.cover-main h1 {
 }
 
 .cover .cover-main {
-  margin: none;
   max-width: none;
 }
 
