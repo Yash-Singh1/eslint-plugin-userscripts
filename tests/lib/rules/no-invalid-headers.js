@@ -24,6 +24,7 @@ ruleTester.run('no-invalid-headers', rule, {
     // @nocompat       Chrome
     // @history        1.0 Initial release
     // @copyright      2020-2021, Yash Singh (https://github.com/Yash-Singh1)
+    // @sandbox        JavaScript
     // ==/UserScript==
     /* globals globalObj */`
   ],
