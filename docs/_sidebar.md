@@ -20,6 +20,7 @@
   - [`no-invalid-headers`](rules/no-invalid-headers.md)
   - [`compat-grant`](rules/compat-grant.md)
   - [`compat-headers`](rules/compat-headers.md)
+  - [`better-use-match`](rules/better-use-match.md)
 
 - Utilities
   - [Create Validator](utils/createValidator.md)
