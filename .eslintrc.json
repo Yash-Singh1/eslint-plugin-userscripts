@@ -24,6 +24,8 @@
     "unicorn/no-nested-ternary": "off",
     "unicorn/prefer-array-find": "error",
     "unicorn/no-null": "off",
+    // TODO: Enable this when we no longer support NodeJS v15
+    "unicorn/prefer-node-protocol": "off",
     "eslint-comments/no-unused-disable": "error"
   },
   "overrides": [
