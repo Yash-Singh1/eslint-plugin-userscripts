@@ -36,7 +36,7 @@
     "should": "^13.2.3"
   },
   "peerDependencies": {
-    "eslint": ">=6.0.0 <=8.18.0"
+    "eslint": ">=6.0.0 <9"
   },
   "engines": {
     "node": ">=14.0.0 <19.0.0"
