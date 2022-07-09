@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-userscripts",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Implements rules for userscripts metadata in eslint",
   "keywords": [
     "eslint",
