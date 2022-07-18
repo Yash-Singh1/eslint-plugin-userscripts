@@ -73,7 +73,7 @@ Arguments (without `runOnce` enabled):
   where there is more than one match for the header
 
 With `runOnce` enabled, `attrVal`, `index`, `indexMatch`, `keyName` will be arrays.
-See the [`runOnce` documentation](#runOnce) for more information.
+See the [`runOnce` documentation](#runonce) for more information.
 
 ### `messages`
 
@@ -83,9 +83,7 @@ See the [`runOnce` documentation](#runOnce) for more information.
 
 Message ID to template mapping for messages that will be passed to the metadata
 for ESLint. This is used when you want to isolate a message's templating when
-reporting errors to a seperate place and repetition.
-See the
-[ESLint documentation](https://eslint.org/docs/developer-guide/working-with-rules#messageids)
+reporting errors to a separate place and repetition. See the [ESLint documentation](https://eslint.org/docs/developer-guide/working-with-rules#messageids)
 for more. Note that internally, `missingAttribute` is used.
 
 ### `fixable`
@@ -120,5 +118,5 @@ Makes the validator run only once on all the metadata.
 - Required: `false`
 
 See the [documentation](https://eslint.org/docs/developer-guide/working-with-rules#options-schemas).
-Note that if `required` is enabled, this will be overrided a string option taking
+Note that if `required` is enabled, this will be overridden a string option taking
 `required` or `optional`.

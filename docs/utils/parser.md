@@ -1,6 +1,6 @@
 # Parser
 
-The parser is a utlity allowing you to parse a `SourceCode` object and get
+The parser is a utility allowing you to parse a `SourceCode` object and get
 information on the metadata in the `SourceCode`.
 
 ## Usage
