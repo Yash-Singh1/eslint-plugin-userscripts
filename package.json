@@ -28,7 +28,7 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-unicorn": "^43.0.0",
     "husky": "^8.0.1",
-    "markdownlint-cli": "^0.31.0",
+    "markdownlint-cli": "^0.32.0",
     "mocha": "^10.0.0",
     "nyc": "^15.1.0",
     "prettier": "^2.4.1",
