@@ -17,9 +17,6 @@ describe('config', () => {
 
 describe('rules', () => {
   it('should have meta.docs.url', () => {
-    console.log(
-      require('../..').rules[Object.keys(require('../..').rules)[0]].meta.docs
-    );
     require('../..').rules[Object.keys(require('../..').rules)[0]].meta.docs.url
       .should.be.String;
   });

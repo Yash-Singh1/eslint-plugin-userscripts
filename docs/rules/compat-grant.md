@@ -17,12 +17,20 @@ The settings must contain a `userscriptVersions` property with the keys of `tamp
 `greasemonkey`, `violentmonkey` (you can exclude some of them if you don't
 support them) with their values being semver [version constraints](https://github.com/npm/node-semver#ranges).
 
+Optionally, you may also include a `userscriptGrantCompatabilityOverrides` property
+that contains compatability data overrides. The property is a group of key-value
+pairs with the key being the grant and the value being an object with a `versions`
+property (for more info see `lib/data/compat-grant.js`) and a `deps` property
+(depending grants).
+
 ## Options
 
 This rule has an object option with the following properties:
 
 - `"requireAllCompatible"` (default: `false`) requires that all configured
   userscript managers support the grant permission used
+- `"gmPolyfill"` (default: `false`) use compatability overrides for the
+  [greasemonkey 4 polyfill](https://github.com/greasemonkey/gm4-polyfill).
 
 ## Examples
 
