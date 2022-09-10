@@ -1,7 +1,7 @@
-var rule = require('..')['no-invalid-headers'];
-var RuleTester = require('eslint').RuleTester;
+const rule = require('..')['no-invalid-headers'];
+const RuleTester = require('eslint').RuleTester;
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 ruleTester.run('no-invalid-headers', rule, {
   valid: [
     `// ==UserScript==

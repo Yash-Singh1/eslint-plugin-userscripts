@@ -1,7 +1,7 @@
-var rule = require('..')['use-homepage-and-url'];
-var RuleTester = require('eslint').RuleTester;
+const rule = require('..')['use-homepage-and-url'];
+const RuleTester = require('eslint').RuleTester;
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 ruleTester.run('use-homepage-and-url', rule, {
   valid: [
     `// ==UserScript==

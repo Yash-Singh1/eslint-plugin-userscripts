@@ -1,7 +1,7 @@
-var rule = require('..')['no-invalid-grant'];
-var RuleTester = require('eslint').RuleTester;
+const rule = require('..')['no-invalid-grant'];
+const RuleTester = require('eslint').RuleTester;
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 ruleTester.run('no-invalid-grant', rule, {
   valid: [
     // "@grant" should not be detected if it's part of another header

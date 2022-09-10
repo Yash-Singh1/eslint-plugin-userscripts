@@ -1,7 +1,7 @@
-var rule = require('..')['filename-user'];
-var RuleTester = require('eslint').RuleTester;
+const rule = require('..')['filename-user'];
+const RuleTester = require('eslint').RuleTester;
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 ruleTester.run('filename-user', rule, {
   valid: [
     {

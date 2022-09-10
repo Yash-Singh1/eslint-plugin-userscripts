@@ -1,7 +1,7 @@
-var rule = require('..')['align-attributes'];
-var RuleTester = require('eslint').RuleTester;
+const rule = require('..')['align-attributes'];
+const RuleTester = require('eslint').RuleTester;
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 ruleTester.run('align-attributes', rule, {
   valid: [
     `// ==UserScript==

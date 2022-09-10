@@ -1,7 +1,7 @@
-var rule = require('..')['require-attribute-space-prefix'];
-var RuleTester = require('eslint').RuleTester;
+const rule = require('..')['require-attribute-space-prefix'];
+const RuleTester = require('eslint').RuleTester;
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 ruleTester.run('require-attribute-space-prefix', rule, {
   valid: [
     // handle empty comment lines

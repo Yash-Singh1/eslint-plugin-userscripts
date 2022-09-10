@@ -1,7 +1,7 @@
-var rule = require('..')['require-version'];
-var RuleTester = require('eslint').RuleTester;
+const rule = require('..')['require-version'];
+const RuleTester = require('eslint').RuleTester;
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 ruleTester.run('require-version', rule, {
   valid: [
     'Alpha-v1',

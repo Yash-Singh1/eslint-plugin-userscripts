@@ -1,7 +1,7 @@
-var rule = require('..')['compat-grant'];
-var RuleTester = require('eslint').RuleTester;
+const rule = require('..')['compat-grant'];
+const RuleTester = require('eslint').RuleTester;
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 ruleTester.run('compat-grant', rule, {
   valid: [
     `// ==UserScript==

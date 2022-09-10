@@ -1,7 +1,7 @@
-var rule = require('..')['use-download-and-update-url'];
-var RuleTester = require('eslint').RuleTester;
+const rule = require('..')['use-download-and-update-url'];
+const RuleTester = require('eslint').RuleTester;
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 ruleTester.run('use-download-and-update-url', rule, {
   valid: [
     `// ==UserScript==

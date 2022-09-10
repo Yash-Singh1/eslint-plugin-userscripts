@@ -1,7 +1,7 @@
-var rule = require('..')['compat-headers'];
-var RuleTester = require('eslint').RuleTester;
+const rule = require('..')['compat-headers'];
+const RuleTester = require('eslint').RuleTester;
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 ruleTester.run('compat-headers', rule, {
   valid: [
     `// ==UserScript==

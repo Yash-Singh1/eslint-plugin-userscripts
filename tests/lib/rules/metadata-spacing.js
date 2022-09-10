@@ -1,7 +1,7 @@
-var rule = require('..')['metadata-spacing'];
-var RuleTester = require('eslint').RuleTester;
+const rule = require('..')['metadata-spacing'];
+const RuleTester = require('eslint').RuleTester;
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 
 ruleTester.run('metadata-spacing', rule, {
   valid: [

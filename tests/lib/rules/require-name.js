@@ -1,7 +1,7 @@
-var rule = require('..')['require-name'];
-var RuleTester = require('eslint').RuleTester;
+const rule = require('..')['require-name'];
+const RuleTester = require('eslint').RuleTester;
 
-var ruleTester = new RuleTester();
+const ruleTester = new RuleTester();
 ruleTester.run('require-name', rule, {
   valid: [
     `// ==UserScript==
