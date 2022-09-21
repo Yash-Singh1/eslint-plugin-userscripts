@@ -5,3 +5,4 @@ docs/
 .prettierrc.json
 .eslintrc.json
 .markdownlint.json
+.gitpod.yml
