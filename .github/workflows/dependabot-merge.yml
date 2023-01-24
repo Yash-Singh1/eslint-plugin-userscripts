@@ -71,7 +71,7 @@ jobs:
       - name: Dependabot metadata
         if: steps.wait-for-build.outputs.conclusion == 'success' && steps.wait-for-build2.outputs.conclusion == 'success' && steps.wait-for-build3.outputs.conclusion == 'success' && steps.wait-for-build4.outputs.conclusion == 'success' && steps.wait-for-build5.outputs.conclusion == 'success' && steps.wait-for-build6.outputs.conclusion == 'success' && steps.wait-for-build7.outputs.conclusion == 'success'
         id: metadata
-        uses: dependabot/fetch-metadata@v1.3.4
+        uses: dependabot/fetch-metadata@v1.3.6
         with:
           github-token: '${{ secrets.GITHUB_TOKEN }}'
 
