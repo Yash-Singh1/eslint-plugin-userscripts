@@ -156,7 +156,7 @@ ruleTester.run('compat-headers', rule, {
       settings: {
         userscriptVersions: {
           tampermonkey: '*',
-          violentmonkey: '*'
+          greasemonkey: '*'
         }
       }
     }
