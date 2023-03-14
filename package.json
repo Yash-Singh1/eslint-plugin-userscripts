@@ -17,21 +17,21 @@
   },
   "dependencies": {
     "requireindex": "~1.2.0",
-    "semver": "^7.3.5"
+    "semver": "^7.3.8"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.15.8",
-    "acorn": "^8.5.0",
-    "eslint": "^8.18.0",
+    "@babel/eslint-parser": "^7.19.1",
+    "acorn": "^8.8.2",
+    "eslint": "^8.36.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-eslint-plugin": "^5.0.0",
-    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-eslint-plugin": "^5.0.8",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-unicorn": "^46.0.0",
-    "husky": "^8.0.1",
+    "husky": "^8.0.3",
     "markdownlint-cli": "^0.33.0",
-    "mocha": "^10.0.0",
+    "mocha": "^10.2.0",
     "nyc": "^15.1.0",
-    "prettier": "^2.4.1",
+    "prettier": "^2.8.4",
     "prettier-plugin-jsdoc": "^0.4.2",
     "should": "^13.2.3"
   },
@@ -39,7 +39,7 @@
     "eslint": ">=6.0.0 <9"
   },
   "engines": {
-    "node": ">=14.0.0 <19.0.0"
+    "node": ">=14.0.0 <20.0.0"
   },
   "license": "MIT",
   "homepage": "https://github.com/Yash-Singh1/eslint-plugin-userscripts#readme",
