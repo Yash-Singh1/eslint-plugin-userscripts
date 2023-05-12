@@ -26,6 +26,8 @@
     "unicorn/no-null": "off",
     // TODO: Enable this when we no longer support NodeJS v15
     "unicorn/prefer-node-protocol": "off",
+    // TODO: Enable this when we target Node.js >= 16.6.0
+    "unicorn/prefer-at": "off",
     "eslint-comments/no-unused-disable": "error"
   },
   "overrides": [
