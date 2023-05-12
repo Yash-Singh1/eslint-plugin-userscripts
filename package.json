@@ -36,10 +36,10 @@
     "should": "^13.2.3"
   },
   "peerDependencies": {
-    "eslint": ">=6.0.0 <9"
+    "eslint": ">=8.0.0 <9"
   },
   "engines": {
-    "node": ">=14.0.0 <21.0.0"
+    "node": ">=16.0.0 <21.0.0"
   },
   "license": "MIT",
   "homepage": "https://github.com/Yash-Singh1/eslint-plugin-userscripts#readme",
