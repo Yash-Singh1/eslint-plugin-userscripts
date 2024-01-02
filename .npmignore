@@ -1,9 +1,13 @@
 tests/
 docs/
 lib/
+coverage/
+.nyc_output/
 .github/
 .husky/
 .prettierrc.json
-.eslintrc.json
+.eslintrc.js
 .markdownlint.json
 .gitpod.yml
+tsup.config.ts
+tsconfig.json
