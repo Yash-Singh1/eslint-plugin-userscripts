@@ -2,6 +2,8 @@ import { createValidator } from '../utils/createValidator';
 
 export default createValidator({
   name: 'include',
+  description:
+    'use @match instead of @include',
   required: false,
   validator: ({ attrVal, context }) => {
     context.report({
@@ -17,6 +19,6 @@ export default createValidator({
   },
   messages: {
     betterUseMatch:
-      'Using @include is potentially unsafe and may be obsolete in Manifest v3 in early 2023. Please switch to @match.'
+      'Using @include is potentially unsafe and may be obsolete in Manifest v3. Please switch to @match.'
   }
 });

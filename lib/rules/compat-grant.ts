@@ -6,6 +6,7 @@ import type { VersionAssertion } from '../data/version-assertion';
 
 export default createValidator({
   name: ['grant'],
+  description: 'ensures compatibility across targeted userscript managers when using grants',
   required: false,
   validator: ({ attrVal, context }) => {
     if (!context.settings.userscriptVersions) {

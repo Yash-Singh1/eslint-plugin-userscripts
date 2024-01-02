@@ -30,6 +30,11 @@ interface Options {
   name: string | string[];
 
   /**
+   * Description of the rule
+   */
+  description?: string;
+
+  /**
    * Whether the attribute is required, this will ignore your custom validator and use the default one
    */
   required?: boolean;
@@ -130,6 +135,7 @@ export function createValidator({
     '^(' + (typeof name === 'string' ? name : name.join('|')) + ')$'
   ),
   runOnce = false,
+  description,
   schema
 }: OptionsRunMultiple | OptionsRunOnce) {
   const nameList: string[] = typeof name === 'string' ? [name] : name;
@@ -138,9 +144,13 @@ export function createValidator({
     meta: {
       type: 'suggestion',
       docs: {
-        description: `${
-          required ? `require ${validator ? 'and validate ' : ''}` : 'validate '
-        }${nameList.join(' and ')} in the metadata for userscripts`,
+        description:
+          description ||
+          `${
+            required
+              ? `require ${validator ? 'and validate ' : ''}`
+              : 'validate '
+          }${nameList.join(' and ')} in the metadata for userscripts`,
         category: 'Best Practices'
       },
       schema: required

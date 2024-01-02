@@ -12,7 +12,7 @@ export default createValidator({
             attrVal.comment.range,
             `\n${context.sourceCode.lines[
               attrVal.comment.loc.start.line - 1
-            ].replace(/^(\s*\/\/\s*@)\S*/, '$1downloadURL')}`
+            ].replace(/@\S+/, '@downloadURL')}`
           );
         }
       });
