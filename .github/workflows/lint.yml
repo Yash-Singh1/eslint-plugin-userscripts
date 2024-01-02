@@ -21,10 +21,61 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
 
-      - name: Install npm dependencies
-        run: npm install
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Install pnpm dependencies
+        run: pnpm install
 
       - name: Lint code
-        run: npm run lint
+        run: pnpm run lint
+
+      - name: Build code
+        run: pnpm run build
+
+      - name: Run type checks
+        run: pnpm run type-check
+
+      - name: Ensure all rules are in the README
+        run: pnpm markdownlint README.md docs/README.md --config tests/docs/.markdownlint.json --rules tests/docs/README.js
+
+      - name: Ensure all rules are documented
+        run: |
+          passes=true
+          for rule in $(ls lib/rules | sed 's/\.js$//')
+          do
+            if [ ! -f "docs/rules/$rule.md" ]
+            then
+              passes=false
+              echo "Expected documentation for $rule to exist"
+            fi
+          done
+          if [ ! "$passes" = true ]
+          then
+            exit 1
+          fi
+
+      - name: Ensure all rules are in the documentation sidebar
+        run: pnpm markdownlint docs/_sidebar.md --config tests/docs/.markdownlint.json --rules tests/docs/_sidebar.js
+
+      - name: Copy Documentation README
+        run: ./.husky/pre-commit
+
+      - name: Ensure there is no Git Changes
+        run: |
+          if [ -z "$(git status --short)" ]
+          then
+            echo "README.md and docs/README.md are in sync"
+          else
+            echo "Make sure that the README.md and docs/README.md are in sync"
+            echo
+            echo "Difference:"
+            echo
+            git diff
+            exit 1
+          fi

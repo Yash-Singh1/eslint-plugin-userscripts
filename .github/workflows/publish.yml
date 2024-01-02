@@ -14,11 +14,20 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
           registry-url: https://registry.npmjs.org/
 
-      - name: Install npm dependencies
-        run: npm install
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Install pnpm dependencies
+        run: pnpm install
+
+      - name: Build code
+        run: pnpm run build
 
       - name: Publish Package
         run: npm publish --access public
