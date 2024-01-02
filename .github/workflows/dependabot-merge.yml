@@ -14,22 +14,6 @@ jobs:
     steps:
       - name: Wait for build to succeed
         uses: fountainhead/action-wait-for-check@v1.1.0
-        id: wait-for-build
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: Readme in Sync Test
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
-
-      - name: Wait for build to succeed
-        uses: fountainhead/action-wait-for-check@v1.1.0
-        id: wait-for-build2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: All Rules Everywhere Test
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
-
-      - name: Wait for build to succeed
-        uses: fountainhead/action-wait-for-check@v1.1.0
         id: wait-for-build3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -41,7 +25,7 @@ jobs:
         id: wait-for-build4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: Run tests (14.x)
+          checkName: Run tests (18.x)
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
       - name: Wait for build to succeed
@@ -49,7 +33,7 @@ jobs:
         id: wait-for-build5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: Run tests (15.x)
+          checkName: Run tests (19.x)
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
       - name: Wait for build to succeed
@@ -57,7 +41,7 @@ jobs:
         id: wait-for-build6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: Run tests (16.x)
+          checkName: Run tests (20.x)
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
       - name: Wait for build to succeed
@@ -65,7 +49,7 @@ jobs:
         id: wait-for-build7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: Run tests (17.x)
+          checkName: Run tests (21.x)
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
       - name: Dependabot metadata
