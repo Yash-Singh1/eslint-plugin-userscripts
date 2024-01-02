@@ -8,12 +8,37 @@
     "eslint-plugin"
   ],
   "author": "Yash Singh",
-  "main": "./lib/index.js",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./package.json": {
+      "import": "./package.json",
+      "require": "./package.json"
+    },
+    "./lib/rules": {
+      "import": "./dist/rules/index.js",
+      "require": "./dist/rules/index.js"
+    },
+    "./lib/utils/createValidator.js": {
+      "import": "./dist/utils/createValidator.js",
+      "require": "./dist/utils/createValidator.js"
+    },
+    "./lib/utils/parse.js": {
+      "import": "./dist/utils/parse.js",
+      "require": "./dist/utils/parse.js"
+    }
+  },
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text mocha tests --recursive",
+    "test": "nyc --reporter=lcov --reporter=text mocha --recursive --file $(find tests -type file -name \"*.ts\") --require ts-node/register",
+    "build": "tsup",
+    "type-check": "tsc --noEmit",
     "lint": "eslint . --ignore-path .gitignore && prettier --check . --ignore-path .gitignore && markdownlint . --ignore-path .gitignore",
     "lint:fix": "eslint . --ignore-path .gitignore --fix && prettier --write . --ignore-path .gitignore && markdownlint --fix . --ignore-path .gitignore",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "coverage": "live-server coverage/lcov-report"
   },
   "dependencies": {
     "requireindex": "~1.2.0",
@@ -21,25 +46,35 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
+    "@types/eslint": "^8.44.8",
+    "@types/estree": "1.0.5",
+    "@types/json-schema": "^7.0.15",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.10.4",
+    "@types/semver": "^7.5.6",
     "acorn": "^8.8.2",
-    "eslint": "^8.40.0",
+    "eslint": "8.40.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-eslint-plugin": "^5.0.8",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-unicorn": "^47.0.0",
     "husky": "^8.0.3",
+    "live-server": "^1.2.2",
     "markdownlint-cli": "^0.35.0",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
-    "prettier": "^2.8.4",
-    "prettier-plugin-jsdoc": "^0.4.2",
-    "should": "^13.2.3"
+    "prettier": "^3.1.1",
+    "prettier-plugin-jsdoc": "^1.3.0",
+    "should": "^13.2.3",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "eslint": ">=8.0.0 <9"
+    "eslint": ">=8.40.0 <10"
   },
   "engines": {
-    "node": ">=16.0.0 <21.0.0"
+    "node": ">=16.0.0 <22.0.0"
   },
   "license": "MIT",
   "homepage": "https://github.com/Yash-Singh1/eslint-plugin-userscripts#readme",

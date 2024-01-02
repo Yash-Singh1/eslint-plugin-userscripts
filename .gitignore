@@ -5,3 +5,6 @@ package-lock.json
 # Code Coverage
 .nyc_output/
 coverage/
+
+# Build
+dist/
