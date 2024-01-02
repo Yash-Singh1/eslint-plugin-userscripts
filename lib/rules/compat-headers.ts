@@ -5,7 +5,8 @@ import { cleanupRange } from '../utils/cleanupRange';
 
 export default createValidator({
   name: 'headers',
-  description: 'ensures compatibility across targeted userscript managers when using headers',
+  description:
+    'ensures compatibility across targeted userscript managers when using headers',
   required: false,
   validator: ({ attrVal, context }) => {
     if (!context.settings.userscriptVersions) {

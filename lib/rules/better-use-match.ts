@@ -2,8 +2,7 @@ import { createValidator } from '../utils/createValidator';
 
 export default createValidator({
   name: 'include',
-  description:
-    'use @match instead of @include',
+  description: 'use @match instead of @include',
   required: false,
   validator: ({ attrVal, context }) => {
     context.report({
