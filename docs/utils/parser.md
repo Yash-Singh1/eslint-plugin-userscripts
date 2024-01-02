@@ -6,7 +6,7 @@ information on the metadata in the `SourceCode`.
 ## Usage
 
 ```js
-const parse = require('eslint-plugin-userscripts/lib/utils/parse.js');
+const { parse } = require('eslint-plugin-userscripts/dist/utils/parse');
 ```
 
 `parse` is a function taking one argument, the `SourceCode`.

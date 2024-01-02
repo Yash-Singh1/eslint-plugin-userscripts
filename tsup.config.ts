@@ -9,5 +9,6 @@ export default defineConfig({
   minify: false,
   platform: 'node',
   outDir: 'dist',
-  bundle: false
+  bundle: false,
+  dts: true,
 });

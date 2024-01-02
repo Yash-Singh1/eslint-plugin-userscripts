@@ -9,28 +9,6 @@
   ],
   "author": "Yash Singh",
   "main": "./dist/index.js",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
-    },
-    "./package.json": {
-      "import": "./package.json",
-      "require": "./package.json"
-    },
-    "./lib/rules": {
-      "import": "./dist/rules/index.js",
-      "require": "./dist/rules/index.js"
-    },
-    "./lib/utils/createValidator.js": {
-      "import": "./dist/utils/createValidator.js",
-      "require": "./dist/utils/createValidator.js"
-    },
-    "./lib/utils/parse.js": {
-      "import": "./dist/utils/parse.js",
-      "require": "./dist/utils/parse.js"
-    }
-  },
   "scripts": {
     "test": "nyc --reporter=lcov --reporter=text mocha --recursive --file $(find tests -type f -name \"*.ts\") -r esbuild-runner/register",
     "build": "tsup",

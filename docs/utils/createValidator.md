@@ -10,7 +10,7 @@ to ESLint's configuration.
 Import the utility:
 
 ```js
-const createValidator = require('eslint-plugin-userscripts/lib/utils/createValidator.js');
+const { createValidator } = require('eslint-plugin-userscripts/dist/utils/createValidator');
 ```
 
 ## API
