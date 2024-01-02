@@ -10,5 +10,5 @@ export default defineConfig({
   platform: 'node',
   outDir: 'dist',
   bundle: false,
-  dts: true,
+  dts: true
 });
