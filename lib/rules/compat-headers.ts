@@ -15,8 +15,10 @@ export default createValidator({
     const allRequired =
       context.options[0] && context.options[0].requireAllCompatible;
 
-    const supports: boolean[] = [];
     const nonLocaleHeaderName = headerName.split(':')[0];
+
+    let allVersionsSupport = true;
+    let allVersionsDontSupport = true;
 
     if (
       headerName.includes(':') &&
@@ -26,42 +28,45 @@ export default createValidator({
         const foundAssertion = compatMap.localized[nonLocaleHeaderName]!.find(
           (constraint) => constraint.type === versionConstraint
         );
-        supports.push(
-          foundAssertion
-            ? intersects(
-                cleanupRange(
-                  context.settings.userscriptVersions[versionConstraint]
-                ),
-                cleanupRange(foundAssertion.versionConstraint)
-              )
-            : false
-        );
+        const supported = foundAssertion
+          ? intersects(
+              cleanupRange(
+                context.settings.userscriptVersions[versionConstraint]
+              ),
+              cleanupRange(foundAssertion.versionConstraint)
+            )
+          : false;
+        if (supported) {
+          allVersionsDontSupport = false;
+        } else {
+          allVersionsSupport = false;
+        }
       }
     } else if (headerName in compatMap.unlocalized) {
       for (const versionConstraint in context.settings.userscriptVersions) {
         const foundAssertion = compatMap.unlocalized[headerName]!.find(
           (constraint) => constraint.type === versionConstraint
         );
-        supports.push(
-          foundAssertion
-            ? intersects(
-                cleanupRange(
-                  context.settings.userscriptVersions[versionConstraint]
-                ),
-                cleanupRange(foundAssertion.versionConstraint),
-                true
-              )
-            : false
-        );
+        const supported = foundAssertion
+          ? intersects(
+              cleanupRange(
+                context.settings.userscriptVersions[versionConstraint]
+              ),
+              cleanupRange(foundAssertion.versionConstraint),
+              true
+            )
+          : false;
+        if (supported) {
+          allVersionsDontSupport = false;
+        } else {
+          allVersionsSupport = false;
+        }
       }
     } else if (compatMap.nonFunctional[headerName]) {
       return;
     }
 
-    if (
-      allRequired &&
-      !supports.every((supportsIntersection) => supportsIntersection === true)
-    ) {
+    if (allRequired && !allVersionsSupport) {
       context.report({
         loc: {
           start: {
@@ -74,17 +79,12 @@ export default createValidator({
         data: { headerName }
       });
     } else if (
-      (!allRequired &&
-        supports.every(
-          (supportsIntersection) => supportsIntersection === false
-        )) ||
-      (!Object.keys({
-        ...compatMap.nonFunctional,
-        ...compatMap.unlocalized
-      }).includes(headerName) &&
-        !Object.keys(compatMap.localized).some((localizableHeaderName) =>
-          headerName.startsWith(`${localizableHeaderName}:`)
-        ))
+      (!allRequired && allVersionsDontSupport) ||
+      !(
+        headerName in compatMap.nonFunctional ||
+        headerName in compatMap.unlocalized ||
+        nonLocaleHeaderName in compatMap.localized
+      )
     ) {
       context.report({
         loc: {

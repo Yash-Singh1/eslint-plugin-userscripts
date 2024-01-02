@@ -1,25 +1,27 @@
 import { NonNullishComment } from '../utils/comment';
-import { type Metadata, createValidator } from '../utils/createValidator';
+import { createValidator } from '../utils/createValidator';
 
-const nameReg = /^name(:\S+)?$/;
+const nameReg = /^name(:[A-Za-z]+)?$/;
 
 export default createValidator({
-  name: 'name',
+  name: ['name'],
   required: true,
   validator: ({ attrVal, context, metadata }) => {
-    const iteratedKeyNames: string[] = [];
+    const iteratedKeyNames = new Set<string>();
     for (const attrValue of attrVal) {
-      if (iteratedKeyNames.includes(attrValue.key)) {
+      if (iteratedKeyNames.has(attrValue.key)) {
         context.report({
           loc: attrValue.loc,
           messageId: 'multipleNames'
         });
       } else {
-        iteratedKeyNames.push(attrValue.key);
+        iteratedKeyNames.add(attrValue.key);
       }
     }
 
-    const metadataValues = Object.values(metadata);
+    const metadataValues = Object.values(metadata).map((attrValue) => {
+      return Array.isArray(attrValue) ? attrValue[0] : attrValue;
+    });
 
     const sourceCode = context.sourceCode;
     const comments = sourceCode.getAllComments();
@@ -29,25 +31,24 @@ export default createValidator({
         comment.value.trim() === '==UserScript==' && comment.type === 'Line'
     ) as NonNullishComment | undefined;
 
-    if (
-      startComment &&
-      metadataValues.some(
-        (attrValue, attrValIndex) =>
-          attrValIndex !== 0 &&
-          nameReg.test(
-            Array.isArray(attrValue) ? attrValue[0].key : attrValue.key
-          ) &&
-          !nameReg.test(
-            Array.isArray(metadataValues[attrValIndex - 1])
-              ? (metadataValues[attrValIndex - 1] as Metadata[])[0].key
-              : (metadataValues[attrValIndex - 1] as Metadata).key
-          )
-      )
-    ) {
+    let unorderedNames = false;
+    for (const [attrValIndex, attrValue] of metadataValues.entries()) {
+      if (
+        attrValIndex > 0 &&
+        nameReg.test(attrValue.key) &&
+        !nameReg.test(metadataValues[attrValIndex - 1].key)
+      ) {
+        unorderedNames = true;
+        break;
+      }
+    }
+
+    if (startComment && unorderedNames) {
       const endingMetadataComment = comments.find(
         (comment) =>
           comment.value.trim() === '==/UserScript==' && comment.type === 'Line'
       ) as NonNullishComment | undefined;
+
       context.report({
         loc: {
           start: startComment.loc.start,
@@ -70,17 +71,15 @@ export default createValidator({
               ])
             );
           }
+
+          attrVal.sort((attrValue1, attrValue2) =>
+            attrValue1.key === 'name' ? -1 : attrValue2.key === 'name' ? 1 : 0
+          );
+
           fixerRules.push(
             fixer.insertTextAfterRange(
               startComment.range,
               attrVal
-                .sort((attrValue1, attrValue2) =>
-                  attrValue1.key === 'name'
-                    ? -1
-                    : attrValue2.key === 'name'
-                      ? 1
-                      : 0
-                )
                 .map(
                   (attrValue) =>
                     `\n${

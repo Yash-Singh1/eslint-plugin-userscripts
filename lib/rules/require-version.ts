@@ -13,6 +13,7 @@ export default createValidator({
         messageId: 'multipleVersions'
       });
     }
+
     const versionWhitespace = /^(\s*\/\/\s*)/.exec(
       context.sourceCode.lines[attrVal.comment.loc.start.line]
     )?.[1];

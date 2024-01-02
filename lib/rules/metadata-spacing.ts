@@ -21,7 +21,10 @@ export default {
       return {};
     }
 
-    const metadataLastLineLoc = result.lines[result.lines.length - 1].lineLoc;
+    const metadataLastLineLoc = result.lines.at(-1)?.lineLoc;
+    if (!metadataLastLineLoc) {
+      return {};
+    }
 
     const hasCodeOtherThanMetadata =
       sourceCode.lines.length !== metadataLastLineLoc.end.line;

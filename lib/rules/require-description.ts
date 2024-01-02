@@ -6,15 +6,16 @@ export default createValidator({
   name: 'description',
   required: true,
   validator: ({ attrVal, context }) => {
-    const iteratedKeyNames: string[] = [];
+    const iteratedKeyNames = new Set<string>();
+
     for (const attrValue of attrVal) {
-      if (iteratedKeyNames.includes(attrValue.key)) {
+      if (iteratedKeyNames.has(attrValue.key)) {
         context.report({
           loc: attrValue.loc,
           messageId: 'multipleDescriptions'
         });
       } else {
-        iteratedKeyNames.push(attrValue.key);
+        iteratedKeyNames.add(attrValue.key);
       }
     }
   },

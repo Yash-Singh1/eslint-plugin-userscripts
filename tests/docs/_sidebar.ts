@@ -28,10 +28,8 @@ const plugin = {
       return allTokens;
     }, [] as MarkdownItToken[]);
 
-    for (const token of params.tokens.filter(
-      (token) => token.type === 'inline'
-    )) {
-      if (token.line === '- Rules') continue;
+    for (const token of params.tokens) {
+      if (token.line === '- Rules' || token.type !== 'inline') continue;
       const ruleName = token.line.trim().split('`')[1];
       if (!rules.includes(ruleName)) {
         onError({

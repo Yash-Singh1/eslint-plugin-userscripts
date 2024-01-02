@@ -5,7 +5,7 @@ import { cleanupRange } from '../utils/cleanupRange';
 import type { VersionAssertion } from '../data/version-assertion';
 
 export default createValidator({
-  name: 'grant',
+  name: ['grant'],
   required: false,
   validator: ({ attrVal, context }) => {
     if (!context.settings.userscriptVersions) {

@@ -15,31 +15,70 @@ export type Metadata = {
   key: string;
 };
 
-type ValidatorCallback<UseArray extends boolean> = (validationInfo: {
-  attrVal: UseArray extends true ? Metadata[] : Metadata;
-  index: UseArray extends true ? number[] : number;
+type ValidatorCallback<SingleCall extends boolean> = (validationInfo: {
+  attrVal: SingleCall extends true ? Metadata[] : Metadata;
+  index: SingleCall extends true ? number[] : number;
   metadata: Record<string, Metadata | Metadata[]>;
   context: Rule.RuleContext;
-  keyName: string | string[];
+  keyName: SingleCall extends true ? string[] : string;
 }) => void;
 
 interface Options {
+  /**
+   * Name of the attribute to validate
+   */
   name: string | string[];
+
+  /**
+   * Whether the attribute is required, this will ignore your custom validator and use the default one
+   */
   required?: boolean;
+
+  /**
+   * Message ID to message template mapping
+   *
+   * @see https://eslint.org/docs/latest/extend/custom-rules#using-message-placeholders
+   */
   messages?: Record<string, string>;
+
+  /**
+   * Custom regular expression that the attribute name must match
+   * Overrides the `name` option
+   */
   regexMatch?: RegExp;
+
+  /**
+   * Whether the rule is fixable or not, adds in metadata property `fix`
+   */
   fixable?: boolean;
-  regexMatxch?: RegExp;
-  schema?: JSONSchema4;
+
+  /**
+   * JSON Schema to validate attribute options
+   */
+  schema?: JSONSchema4 | JSONSchema4[];
 }
 
 interface OptionsRunOnce extends Options {
-  validator?: ValidatorCallback<true> | false;
+  /**
+   * Custom validator function, if using `runOnce` this will be called once with all matching attributes
+   */
+  validator?: ValidatorCallback</* SingleCall */ true> | false;
+
+  /**
+   * Whether to run the validator once or for each attribute
+   */
   runOnce: true;
 }
 
 interface OptionsRunMultiple extends Options {
-  validator?: ValidatorCallback<false> | false;
+  /**
+   * Custom validator function, if using `runOnce` this will be called once with all matching attributes
+   */
+  validator?: ValidatorCallback</* SingleCall */ false> | false;
+
+  /**
+   * Whether to run the validator once or for each attribute
+   */
   runOnce?: false;
 }
 
@@ -56,6 +95,31 @@ function isRunOnce(
   return runOnce;
 }
 
+/**
+ * Creates a rule that validates metadata
+ *
+ * @example
+ * ```ts
+ * // Basic example that requires homepageURL if homepage is present
+ * export default createValidator({
+ *    name: 'homepage',
+ *    required: false,
+ *    validator: ({ attrVal, context, metadata }) => {
+ *        if (!('homepageURL' in metadata)) {
+ *            context.report({
+ *               loc: attrVal.loc,
+ *               messageId: 'missingAttribute',
+ *               data: {
+ *                   attribute: 'homepageURL'
+ *               },
+ *            });
+ *        }
+ *    },
+ * });
+ * ```
+ *
+ * @returns Rule including metadata and rule function
+ */
 export function createValidator({
   name,
   required = false,
@@ -93,15 +157,18 @@ export function createValidator({
       },
       fixable: fixable ? 'code' : undefined
     },
+
     create: (context) => {
       const sourceCode = context.sourceCode;
       const comments = sourceCode.getAllComments();
 
       const result = parse(sourceCode);
+
       const metadata: Record<string, Metadata | Metadata[]> = {};
       const lines = result.lines.filter(
         (line) => line.metadataInfo
       ) as FilterTrue<ParsingResult['lines'][number]>[];
+
       for (const line of lines) {
         const actualValue = line.value.trim().slice(2);
         const lengthDiff = line.value.length - actualValue.length - 2;
@@ -112,7 +179,8 @@ export function createValidator({
           },
           end: line.lineLoc.end
         } satisfies SourceLocation;
-        const val = {
+
+        const metadataVal = {
           val: line.metadataValue.value,
           loc: newLoc,
           comment: {
@@ -126,6 +194,7 @@ export function createValidator({
           },
           key: line.metadataValue.key
         } satisfies Metadata;
+
         // istanbul ignore else
         if (metadata[line.metadataValue.key]) {
           if (!Array.isArray(metadata[line.metadataValue.key])) {
@@ -133,10 +202,11 @@ export function createValidator({
               metadata[line.metadataValue.key] as Metadata
             ];
           }
-          (metadata[line.metadataValue.key] as Metadata[]).push(val);
+          (<Metadata[]>metadata[line.metadataValue.key]).push(metadataVal);
           continue;
         }
-        metadata[line.metadataValue.key] = val;
+
+        metadata[line.metadataValue.key] = metadataVal;
       }
 
       const metadataKeys = Object.keys(metadata);
@@ -147,10 +217,10 @@ export function createValidator({
 
       // istanbul ignore else
       if (
-        startComment &&
-        startComment.loc &&
         required &&
         result.enteredMetadata !== -1 &&
+        startComment &&
+        startComment.loc &&
         (!context.options[0] || context.options[0] === 'required') &&
         !metadataKeys.some((metadataKeyName) =>
           regexMatch.test(metadataKeyName)

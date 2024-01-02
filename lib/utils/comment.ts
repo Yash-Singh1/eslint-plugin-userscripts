@@ -7,3 +7,9 @@ type NonNullishProps<T extends Comment> = {
 };
 
 export type NonNullishComment = NonNullishProps<Comment>;
+
+export function isNonNullishComment(
+  comment: Comment
+): comment is NonNullishComment {
+  return comment.loc !== null;
+}

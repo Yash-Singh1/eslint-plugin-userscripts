@@ -1,18 +1,29 @@
 import type { SourceCode } from 'eslint';
 import type { SourceLocation } from 'acorn';
 
-type Line = {
+interface Line {
   value: string;
   lineLoc: SourceLocation;
   codeBetween: boolean;
   end: boolean;
   start: boolean;
   invalid: boolean;
-};
+}
 
-export type ParsingResult = {
+export interface ParsingResult {
+  /**
+   * Whether the metadata has ended
+   */
   end: boolean;
+
+  /**
+   * The location of the starting of the metadata
+   */
   enteredMetadata: number;
+
+  /**
+   * The lines of the metadata
+   */
   lines: (
     | (Line & {
         metadataInfo: true;
@@ -22,8 +33,14 @@ export type ParsingResult = {
         metadataInfo: false;
       })
   )[];
-};
+}
 
+/**
+ * Parses the UserScript metadata from the source code
+ *
+ * @param sourceCode The ESLint source code object
+ * @returns {ParsingResult} The parsing result
+ */
 export function parse(sourceCode: SourceCode) {
   const defaultLineInfo = {
     codeBetween: false,

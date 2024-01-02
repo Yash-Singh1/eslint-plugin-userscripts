@@ -1,6 +1,6 @@
 import type { Rule } from 'eslint';
 import type { Position } from 'estree';
-import type { NonNullishComment } from '../utils/comment';
+import { isNonNullishComment } from '../utils/comment';
 
 export default {
   meta: {
@@ -38,10 +38,8 @@ export default {
     let start: Position | null = null;
     let end: Position | null = null;
 
-    for (const comment of comments.filter(
-      (comment) => comment.type === 'Line' && comment.loc
-    ) as NonNullishComment[]) {
-      if (done) {
+    for (const comment of comments) {
+      if (done || comment.type !== 'Line' || !isNonNullishComment(comment)) {
         continue;
       }
 
@@ -107,7 +105,7 @@ export default {
               totalSpacing
             ) {
               const startColumn = /^(.*?@\S*)/.exec(
-                sourceCode.getLines()[metadatapoint.line - 1]
+                sourceCode.lines[metadatapoint.line - 1]
               )?.[1].length;
 
               // istanbul ignore if

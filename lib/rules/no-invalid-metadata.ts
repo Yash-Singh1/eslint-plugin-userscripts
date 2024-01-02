@@ -36,17 +36,27 @@ export default {
 
     const result = parse(sourceCode);
 
-    for (const { lineLoc } of result.lines.filter((line) => line.codeBetween))
+    for (const { lineLoc, codeBetween } of result.lines) {
+      if (!codeBetween) {
+        continue;
+      }
+
       context.report({
         loc: lineLoc,
         messageId: 'noCodeBetween'
       });
+    }
 
-    for (const { lineLoc } of result.lines.filter((line) => line.invalid))
+    for (const { lineLoc, invalid } of result.lines) {
+      if (!invalid) {
+        continue;
+      }
+
       context.report({
         loc: lineLoc,
         messageId: 'attributeNotStartsWithAtTheRate'
       });
+    }
 
     const startComment = comments.find(
       (comment) =>
@@ -86,15 +96,13 @@ export default {
               comment.value.trim() === '==UserScript==' &&
               comment.type === 'Line'
           ) as NonNullishComment | undefined;
+
           if (firstStartComment) {
             context.report({
               loc: firstStartComment.loc,
               messageId: 'moveMetadataToTop'
             });
           } else {
-            const firstComment = comments.find(
-              (comment) => comment.loc
-            ) as NonNullishComment;
             context.report({
               loc: firstComment.loc,
               messageId: 'moveMetadataToTop'
