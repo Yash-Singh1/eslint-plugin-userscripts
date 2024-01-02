@@ -33,7 +33,7 @@ export function parse(sourceCode: SourceCode) {
     metadataInfo: false as const
   };
 
-  let result: ParsingResult = {
+  const result: ParsingResult = {
     end: false,
     enteredMetadata: -1,
     lines: []

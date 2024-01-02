@@ -30,7 +30,7 @@ export default createValidator({
     const supports: boolean[] = [];
 
     function doesSupport(givenGrant: string) {
-      let compatValue:
+      const compatValue:
         | (typeof gmPolyfillOverride)[keyof typeof gmPolyfillOverride]
         | VersionAssertion[] =
         overrides[givenGrant] ||

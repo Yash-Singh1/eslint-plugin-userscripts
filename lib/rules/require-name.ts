@@ -7,8 +7,8 @@ export default createValidator({
   name: 'name',
   required: true,
   validator: ({ attrVal, context, metadata }) => {
-    let iteratedKeyNames: string[] = [];
-    for (let attrValue of attrVal) {
+    const iteratedKeyNames: string[] = [];
+    for (const attrValue of attrVal) {
       if (iteratedKeyNames.includes(attrValue.key)) {
         context.report({
           loc: attrValue.loc,
@@ -57,8 +57,8 @@ export default createValidator({
         },
         messageId: 'nameAtBeginning',
         fix: function (fixer) {
-          let fixerRules = [];
-          for (let attrValue of attrVal) {
+          const fixerRules = [];
+          for (const attrValue of attrVal) {
             fixerRules.push(
               fixer.removeRange([
                 attrValue.comment.range[0] -

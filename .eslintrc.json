@@ -1,15 +1,23 @@
 {
   "parser": "@babel/eslint-parser",
-  "plugins": ["eslint-plugin", "import", "unicorn", "eslint-comments"],
+  "plugins": [
+    "eslint-plugin",
+    "import",
+    "unicorn",
+    "eslint-comments",
+    "@typescript-eslint"
+  ],
   "extends": [
     "eslint:recommended",
     "plugin:eslint-plugin/recommended",
     "plugin:import/recommended",
     "plugin:unicorn/recommended",
+    "plugin:import/typescript",
     "plugin:eslint-comments/recommended"
   ],
   "parserOptions": {
-    "requireConfigFile": false
+    "requireConfigFile": false,
+    "ecmaVersion": 2023
   },
   "env": {
     "node": true
@@ -24,18 +32,20 @@
     "unicorn/no-nested-ternary": "off",
     "unicorn/prefer-array-find": "error",
     "unicorn/no-null": "off",
-    // TODO: Enable this when we no longer support NodeJS v15
-    "unicorn/prefer-node-protocol": "off",
-    // TODO: Enable this when we target Node.js >= 16.6.0
     "unicorn/prefer-at": "off",
     "eslint-comments/no-unused-disable": "error"
   },
   "overrides": [
     {
-      "files": "tests/**/*.js",
+      "files": "tests/**/*.ts",
       "env": {
         "mocha": true
       }
+    },
+    {
+      "files": "**/*.ts",
+      "parser": "@typescript-eslint/parser",
+      "extends": ["plugin:@typescript-eslint/recommended"]
     }
   ]
 }

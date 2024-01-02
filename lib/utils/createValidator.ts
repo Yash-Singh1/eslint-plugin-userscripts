@@ -43,7 +43,7 @@ interface OptionsRunMultiple extends Options {
   runOnce?: false;
 }
 
-type FilterTrue<T extends ParsingResult['lines'][number]> = T extends any
+type FilterTrue<T extends ParsingResult['lines'][number]> = T extends unknown
   ? T['metadataInfo'] extends true
     ? T
     : never
@@ -98,7 +98,7 @@ export function createValidator({
       const comments = sourceCode.getAllComments();
 
       const result = parse(sourceCode);
-      let metadata: Record<string, Metadata | Metadata[]> = {};
+      const metadata: Record<string, Metadata | Metadata[]> = {};
       const lines = result.lines.filter(
         (line) => line.metadataInfo
       ) as FilterTrue<ParsingResult['lines'][number]>[];

@@ -47,7 +47,7 @@ jobs:
       - name: Ensure all rules are documented
         run: |
           passes=true
-          for rule in $(ls lib/rules | sed 's/\.js$//')
+          for rule in $(ls lib/rules | sed 's/\.ts$//')
           do
             if [ ! -f "docs/rules/$rule.md" ]
             then

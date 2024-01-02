@@ -29,7 +29,7 @@ export default {
 
     let inMetadata = false;
     let done = false;
-    let metadata: {
+    const metadata: {
       key: string;
       space: number;
       line: number;
