@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import type { Rule, MarkdownItToken } from 'markdownlint';
 
-export default {
+const plugin = {
   names: ['table-all-rules'],
   tags: ['tables'],
   description: 'Ensures that all the rules are implemented in the READMEs',
@@ -61,3 +61,11 @@ export default {
     }
   }
 } satisfies Rule;
+
+export const names = plugin.names;
+export const tags = plugin.tags;
+export const description = plugin.description;
+export const information = plugin.information;
+const function_ = plugin.function;
+
+export { function_ as function };

@@ -32,7 +32,7 @@
     }
   },
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text mocha --recursive --file $(find tests -type file -name \"*.ts\") --require ts-node/register",
+    "test": "nyc --reporter=lcov --reporter=text mocha --recursive --file $(find tests -type f -name \"*.ts\") --require ts-node/register",
     "build": "tsup",
     "type-check": "tsc --noEmit",
     "lint": "eslint . --ignore-path .gitignore && prettier --check . --ignore-path .gitignore && markdownlint . --ignore-path .gitignore",

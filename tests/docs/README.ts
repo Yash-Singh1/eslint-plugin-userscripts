@@ -9,7 +9,7 @@ const recommendedRules = new Set(
     .map((entry) => entry[0].split('/')[1])
 );
 
-export default {
+const rule = {
   names: ['table-all-rules'],
   tags: ['tables'],
   description: 'Ensures that all the rules are implemented in the READMEs',
@@ -79,3 +79,11 @@ export default {
     }
   }
 } satisfies Rule;
+
+export const names = rule.names;
+export const tags = rule.tags;
+export const description = rule.description;
+export const information = rule.information;
+const function_ = rule.function;
+
+export { function_ as function };
