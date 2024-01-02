@@ -64,7 +64,7 @@ const configs = {
       'userscripts/use-homepage-and-url': 'error',
       'userscripts/require-download-url': 'error',
       'userscripts/align-attributes': ['error', 2],
-      'userscripts/metadata-spacing': ['error', 'always'],
+      'userscripts/metadata-spacing': 'error',
       'userscripts/no-invalid-headers': 'error',
       'userscripts/no-invalid-grant': 'error',
       'userscripts/compat-grant': 'off',
