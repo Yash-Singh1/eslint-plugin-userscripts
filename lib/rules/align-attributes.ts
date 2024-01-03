@@ -37,6 +37,8 @@ export default {
     }[] = [];
     let start: Position | null = null;
     let end: Position | null = null;
+    let maxLength: number = 0;
+    let minSpace: number = Number.POSITIVE_INFINITY;
 
     for (const comment of comments) {
       if (done || comment.type !== 'Line' || !isNonNullishComment(comment)) {
@@ -67,6 +69,9 @@ export default {
           line: comment.loc.start.line,
           comment
         });
+
+        maxLength = Math.max(maxLength, metadata.at(-1)!.key.length);
+        minSpace = Math.min(minSpace, metadata.at(-1)!.space);
       }
     }
 
@@ -78,11 +83,9 @@ export default {
       return {};
     }
 
-    const totalSpacing =
-      Math.max(...metadata.map(({ key }) => key.length)) + spacing;
+    const totalSpacing = maxLength + spacing;
 
-    const hasSpaceLessThenSpacing =
-      metadata.map(({ space }) => space).sort()[0] < spacing;
+    const hasSpaceLessThenSpacing = minSpace < spacing;
 
     if (
       start &&

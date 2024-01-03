@@ -15,7 +15,7 @@ import requireDownloadUrl from './rules/require-download-url';
 import requireName from './rules/require-name';
 import requireVersion from './rules/require-version';
 import useHomepageAndUrl from './rules/use-homepage-and-url';
-import type { ESLint } from 'eslint';
+import type { ESLint, Rule } from 'eslint';
 
 const rules = Object.fromEntries(
   Object.entries({
@@ -34,20 +34,11 @@ const rules = Object.fromEntries(
     'require-name': requireName,
     'require-version': requireVersion,
     'use-homepage-and-url': useHomepageAndUrl
-  }).map(([ruleName, ruleMeta]) => {
-    return [
-      ruleName,
-      {
-        ...ruleMeta,
-        meta: {
-          ...ruleMeta.meta,
-          docs: {
-            ...ruleMeta.meta.docs,
-            url: `https://yash-singh1.github.io/eslint-plugin-userscripts/#/rules/${ruleName}`
-          }
-        }
-      }
-    ];
+  }).map(([ruleName, ruleMeta]: [string, Rule.RuleModule]) => {
+    if (ruleMeta.meta?.docs) {
+      ruleMeta.meta.docs.url = `https://yash-singh1.github.io/eslint-plugin-userscripts/#/rules/${ruleName}`;
+    }
+    return [ruleName, ruleMeta];
   })
 ) satisfies ESLint.Plugin['rules'];
 

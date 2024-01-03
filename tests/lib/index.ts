@@ -16,6 +16,6 @@ describe('config', () => {
 
 describe('rules', () => {
   it('should have meta.docs.url', () => {
-    plugin.rules[Object.keys(plugin.rules)[0]].meta.docs.url.should.be.String;
+    plugin.rules[Object.keys(plugin.rules)[0]].meta!.docs!.url!.should.be.String;
   });
 });

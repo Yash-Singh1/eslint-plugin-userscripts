@@ -77,6 +77,7 @@ export function parse(sourceCode: SourceCode) {
 
     const trimmedLine = line.trim();
     const isLineComment = trimmedLine.startsWith('//');
+    const commentContent = trimmedLine.slice(2).trim();
 
     if (
       // https://github.com/Yash-Singh1/eslint-plugin-userscripts/issues/8
@@ -93,7 +94,7 @@ export function parse(sourceCode: SourceCode) {
     } else if (
       inMetadata &&
       isLineComment &&
-      trimmedLine.slice(2).trim() === '==/UserScript=='
+      commentContent === '==/UserScript=='
     ) {
       result.end = true;
       done = true;
@@ -106,7 +107,7 @@ export function parse(sourceCode: SourceCode) {
     } else if (
       !inMetadata &&
       isLineComment &&
-      trimmedLine.slice(2).trim() === '==UserScript=='
+      commentContent === '==UserScript=='
     ) {
       result.enteredMetadata = index;
       inMetadata = true;
@@ -119,12 +120,12 @@ export function parse(sourceCode: SourceCode) {
     } else if (
       inMetadata &&
       isLineComment &&
-      trimmedLine.slice(2).trim() !== '' // nor an empty line, (see #8 above)
+      commentContent !== '' // nor an empty line, (see #8 above)
     ) {
       if (
-        trimmedLine.slice(2).trim().startsWith('@') // is a header
+        commentContent.startsWith('@') // is a header
       ) {
-        const mainContent = trimmedLine.slice(2).trim().slice(1);
+        const mainContent = commentContent.slice(1);
 
         result.lines.push({
           value: line,
