@@ -251,15 +251,9 @@ export function createValidator({
               matchingMetadataKeyIndex.push(+metadataKeyIndex);
             }
           }
-          const attributeValues = matchingMetadataKeyIndex
-            .map((index) => metadata[metadataKeys[index]])
-            .reduce(
-              (accumalator: Metadata[], metadataPart) =>
-                Array.isArray(metadataPart)
-                  ? [...accumalator, ...metadataPart]
-                  : [...accumalator, metadataPart],
-              [] as Metadata[]
-            );
+          const attributeValues = matchingMetadataKeyIndex.flatMap(
+            (index) => metadata[metadataKeys[index]]
+          );
           validator({
             attrVal: attributeValues,
             index: [...attributeValues.keys()],
