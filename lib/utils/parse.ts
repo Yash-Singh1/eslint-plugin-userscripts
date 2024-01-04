@@ -1,5 +1,4 @@
 import type { SourceCode } from 'eslint';
-import type { SourceLocation } from 'acorn';
 
 interface Line {
   value: string;
@@ -8,6 +7,21 @@ interface Line {
   end: boolean;
   start: boolean;
   invalid: boolean;
+}
+
+// Would import this from acorn, but tsup type resolution is broken
+
+export interface SourceLocation {
+  source?: string | null
+  start: Position
+  end: Position
+}
+
+export interface Position {
+  /** 1-based */
+  line: number
+  /** 0-based */
+  column: number
 }
 
 export interface ParsingResult {

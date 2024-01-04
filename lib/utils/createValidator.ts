@@ -1,7 +1,7 @@
-import { ParsingResult, parse } from './parse';
-import type { JSONSchema4 } from 'json-schema';
-import type { SourceLocation } from 'acorn';
+import { ParsingResult, parse, type SourceLocation } from './parse';
 import type { Rule } from 'eslint';
+
+type JSONSchema4 = Rule.RuleMetaData['schema'];
 
 export type Metadata = {
   comment: {
@@ -60,7 +60,7 @@ interface Options {
   /**
    * JSON Schema to validate attribute options
    */
-  schema?: JSONSchema4 | JSONSchema4[];
+  schema?: JSONSchema4;
 }
 
 interface OptionsRunOnce extends Options {
@@ -293,7 +293,7 @@ export function createValidator({
         }
       }
 
-      return {};
+      return {} as Record<string, never>;
     }
   } satisfies Rule.RuleModule;
 }

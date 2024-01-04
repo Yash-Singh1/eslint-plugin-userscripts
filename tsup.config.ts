@@ -10,5 +10,12 @@ export default defineConfig({
   platform: 'node',
   outDir: 'dist',
   bundle: false,
-  dts: true
+  dts: {
+    entry: [
+      'lib/utils/createValidator.ts',
+      'lib/utils/parse.ts',
+      'lib/index.ts'
+    ],
+    resolve: false
+  }
 });
