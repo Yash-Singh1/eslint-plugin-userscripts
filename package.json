@@ -10,13 +10,12 @@
   "author": "Yash Singh",
   "main": "./dist/index.js",
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text mocha --recursive --file $(find tests -type f -name \"*.ts\") -r esbuild-runner/register",
+    "test": "mocha --recursive --file $(find tests -type f -name \"*.ts\") -r esbuild-runner/register",
     "build": "tsup",
     "type-check": "tsc --noEmit",
     "lint": "eslint . --ignore-path .gitignore && prettier --check . --ignore-path .gitignore && markdownlint . --ignore-path .gitignore",
     "lint:fix": "eslint . --ignore-path .gitignore --fix && prettier --write . --ignore-path .gitignore && markdownlint --fix . --ignore-path .gitignore",
-    "prepare": "husky install",
-    "coverage": "live-server coverage/lcov-report"
+    "prepare": "husky install"
   },
   "dependencies": {
     "semver": "^7.3.8"

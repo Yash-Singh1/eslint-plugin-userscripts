@@ -11,6 +11,7 @@ ruleTester.run('require-version', requireVersion, {
     '1.00',
     '1.0.0',
     '1.-1',
+    '1.',
     '1.1a',
     '1.1.1.1.2.0.1.1.1.1.1',
 
@@ -24,7 +25,15 @@ ruleTester.run('require-version', requireVersion, {
     // https://semver.org/#spec-item-10
     '1.0.0-alpha+001',
     '1.0.0+20130313144700',
-    '1.0.0-beta+exp.sha.5114f85'
+    '1.0.0-beta+exp.sha.5114f85',
+
+    // https://www.tampermonkey.net/changelog.php#v5.0.0:~:text=Refactored%20version%20number%20parser%20to%20support%20ISO%20format%20dates
+    '2023-08-17.alpha',
+    '2023-08-17',
+    '2023-08-17_14-04',
+    '2023-08-17_14-04.0',
+    '2023-08-17+alpha',
+    '2023-09-11_14-0',
   ].map(
     (version) => `// ==UserScript==
                     // @version ${version}
@@ -54,12 +63,6 @@ ruleTester.run('require-version', requireVersion, {
     {
       code: `// ==UserScript==
       // @version .5.6
-      // ==/UserScript==`,
-      errors: [{ messageId: 'invalidVersion' }]
-    },
-    {
-      code: `// ==UserScript==
-      // @version 5.6.
       // ==/UserScript==`,
       errors: [{ messageId: 'invalidVersion' }]
     },

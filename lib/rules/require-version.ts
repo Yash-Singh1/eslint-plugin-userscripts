@@ -1,7 +1,7 @@
 import { createValidator } from '../utils/createValidator';
 
 const versionRegex =
-  /^([\dA-Za-z–-]+)(\.[\dA-Za-z–-]+)*(\+([\dA-Za-z]+)(\.[\dA-Za-z]+)*)?\s*$/;
+  /^([\dA-Za-z–-]+)(\.[\dA-Za-z–-]+)*([+_]([\dA-Za-z-]+)(\.[\dA-Za-z-]+)*)?\.?\s*$/;
 
 export default createValidator({
   name: 'version',
