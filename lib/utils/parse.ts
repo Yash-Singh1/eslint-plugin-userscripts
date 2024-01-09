@@ -12,16 +12,16 @@ interface Line {
 // Would import this from acorn, but tsup type resolution is broken
 
 export interface SourceLocation {
-  source?: string | null
-  start: Position
-  end: Position
+  source?: string | null;
+  start: Position;
+  end: Position;
 }
 
 export interface Position {
   /** 1-based */
-  line: number
+  line: number;
   /** 0-based */
-  column: number
+  column: number;
 }
 
 export interface ParsingResult {
