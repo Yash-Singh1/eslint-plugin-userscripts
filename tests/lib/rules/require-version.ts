@@ -33,7 +33,7 @@ ruleTester.run('require-version', requireVersion, {
     '2023-08-17_14-04',
     '2023-08-17_14-04.0',
     '2023-08-17+alpha',
-    '2023-09-11_14-0',
+    '2023-09-11_14-0'
   ].map(
     (version) => `// ==UserScript==
                     // @version ${version}
