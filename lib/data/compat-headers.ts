@@ -189,6 +189,8 @@ export const compatMap: {
 
     // Popular but not documented
     history: [],
-    developer: []
+    developer: [],
+    browser: [],
+    id: []
   }
 };
