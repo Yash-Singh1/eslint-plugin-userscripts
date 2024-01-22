@@ -189,8 +189,16 @@ export const compatMap: {
 
     // Popular but not documented
     history: [],
-    developer: [],
     browser: [],
-    id: []
+
+    // Scriptish
+    id: [],
+    developer: [],
+    screenshot: [],
+    priority: [],
+    delay: [],
+    css: [],
+    jsversion: [],
+    creator: []
   }
 };
