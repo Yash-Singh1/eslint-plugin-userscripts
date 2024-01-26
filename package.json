@@ -37,7 +37,7 @@
     "eslint-plugin-eslint-plugin": "^5.0.8",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-unicorn": "^50.0.1",
-    "husky": "^8.0.3",
+    "husky": "^9.0.6",
     "json-schema": "^0.4.0",
     "live-server": "^1.2.2",
     "markdownlint": "^0.32.1",
