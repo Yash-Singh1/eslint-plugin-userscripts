@@ -1,7 +1,5 @@
 # `eslint-plugin-userscripts`
 
-[![codecov](https://codecov.io/gh/Yash-Singh1/eslint-plugin-userscripts/branch/main/graph/badge.svg?token=JD8GRJH9D4)](https://codecov.io/gh/Yash-Singh1/eslint-plugin-userscripts)
-
 Implements rules for userscripts in `eslint`.
 
 ## Installation
