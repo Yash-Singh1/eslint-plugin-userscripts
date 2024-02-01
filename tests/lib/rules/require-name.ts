@@ -6,6 +6,11 @@ ruleTester.run('require-name', requireName, {
   valid: [
     `// ==UserScript==
     // @name This is my description
+    // ==/UserScript==`,
+    `// ==UserScript==
+    // @name This is my description
+    // @name:fr-CA This is my description
+    // @name:fr This is my description
     // ==/UserScript==`
   ],
   invalid: [

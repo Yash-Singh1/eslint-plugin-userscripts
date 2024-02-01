@@ -1,7 +1,7 @@
 import { NonNullishComment } from '../utils/comment';
 import { createValidator } from '../utils/createValidator';
 
-const nameReg = /^name(:[A-Za-z]+)?$/;
+const nameReg = /^name(:[A-Za-z-]+)?$/;
 
 export default createValidator({
   name: ['name'],
