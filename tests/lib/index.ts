@@ -9,7 +9,10 @@ describe('config', () => {
       .map((ruleOption) => ruleOption.split('/')[1])
       .sort()
       .should.deepEqual(
-        fs.readdirSync('lib/rules').map((filename) => filename.split('.ts')[0])
+        fs
+          .readdirSync('lib/rules')
+          .map((filename) => filename.split('.ts')[0])
+          .sort()
       );
   });
 });
