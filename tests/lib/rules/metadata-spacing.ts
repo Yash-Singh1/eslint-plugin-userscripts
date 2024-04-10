@@ -84,7 +84,7 @@ ruleTester.run('metadata-spacing', metadataSpacing, {
     // ==/UserScript==
 
     console.log("wow")`,
-      errors: [{}]
+      errors: [{ messageId: 'newlineBetween' }]
     },
 
     {
@@ -95,7 +95,7 @@ ruleTester.run('metadata-spacing', metadataSpacing, {
     // ==/UserScript==
 
     console.log("stuff")`,
-      errors: [{}]
+      errors: [{ messageId: 'newlineBetween' }]
     },
 
     {
@@ -103,7 +103,7 @@ ruleTester.run('metadata-spacing', metadataSpacing, {
     // ==/UserScript==\r\nconsole.log("stuff")`,
       output: `// ==UserScript==
     // ==/UserScript==\n\r\nconsole.log("stuff")`,
-      errors: [{}]
+      errors: [{ messageId: 'newlineBetween' }]
     }
   ]
 });

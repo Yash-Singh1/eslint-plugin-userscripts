@@ -9,7 +9,11 @@ export default {
         'ensure there is a newline between the metadata and the code',
       category: 'Best Practices'
     },
-    fixable: 'whitespace'
+    fixable: 'whitespace',
+    messages: {
+      newlineBetween:
+        'There should be a newline between the metadata and the code'
+    }
   },
   create: (context) => {
     const sourceCode = context.sourceCode;
@@ -37,7 +41,7 @@ export default {
 
     if (lineNextToMetadata.trim().length > 0) {
       context.report({
-        message: 'There should be a newline between the metadata and the code',
+        messageId: 'newlineBetween',
         loc: metadataLastLineLoc,
         fix: function (fixer) {
           const range = [

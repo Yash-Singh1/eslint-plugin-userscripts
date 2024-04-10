@@ -13,8 +13,8 @@
     "test": "mocha --recursive --file $(find tests -type f -name \"*.ts\") -r esbuild-runner/register",
     "build": "tsup",
     "type-check": "tsc --noEmit",
-    "lint": "eslint . --ignore-path .gitignore && prettier --check . --ignore-path .gitignore && markdownlint . --ignore-path .gitignore",
-    "lint:fix": "eslint . --ignore-path .gitignore --fix && prettier --write . --ignore-path .gitignore && markdownlint --fix . --ignore-path .gitignore",
+    "lint": "eslint && prettier --check . --ignore-path .gitignore && markdownlint . --ignore-path .gitignore",
+    "lint:fix": "eslint --fix && prettier --write . --ignore-path .gitignore && markdownlint --fix . --ignore-path .gitignore",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -22,6 +22,8 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.23.3",
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.3.0",
+    "@eslint/js": "^9.0.0",
     "@types/eslint": "^8.44.8",
     "@types/estree": "1.0.5",
     "@types/json-schema": "^7.0.15",
@@ -32,11 +34,11 @@
     "@typescript-eslint/parser": "^6.17.0",
     "esbuild": "^0.20.0",
     "esbuild-runner": "^2.2.2",
-    "eslint": "8.56.0",
-    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint": "9.0.0",
     "eslint-plugin-eslint-plugin": "^5.0.8",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-unicorn": "^50.0.1",
+    "eslint-plugin-unicorn": "^52.0.0",
+    "globals": "^15.0.0",
     "husky": "^9.0.6",
     "json-schema": "^0.4.0",
     "live-server": "^1.2.2",
@@ -47,13 +49,14 @@
     "prettier": "^3.1.1",
     "should": "^13.2.3",
     "tsup": "^8.0.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^7.6.0"
   },
   "peerDependencies": {
-    "eslint": ">=8.40.0 <10"
+    "eslint": ">=8.40.0 <11"
   },
   "engines": {
-    "node": ">=18.0.0 <22.0.0"
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
   },
   "license": "MIT",
   "homepage": "https://github.com/Yash-Singh1/eslint-plugin-userscripts#readme",

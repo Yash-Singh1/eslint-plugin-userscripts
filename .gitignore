@@ -1,6 +1,7 @@
 # Dependencies
 node_modules/
 package-lock.json
+bun.lockb
 
 # Code Coverage
 .nyc_output/
@@ -8,3 +9,6 @@ coverage/
 
 # Build
 dist/
+
+# Mac files
+.DS_Store
