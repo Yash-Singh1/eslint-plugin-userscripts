@@ -42,7 +42,7 @@ jobs:
         run: pnpm run type-check
 
       - name: Ensure all rules are in the README
-        run: NODE_OPTIONS="--require esbuild-runner/register" pnpm exec markdownlint README.md docs/README.md --config tests/docs/.markdownlint.json --rules tests/docs/README.ts
+        run: NODE_OPTIONS="--require esbuild-runner/register" ./node_modules/.bin/markdownlint README.md docs/README.md --config tests/docs/.markdownlint.json --rules tests/docs/README.ts
 
       - name: Ensure all rules are documented
         run: |
@@ -61,7 +61,7 @@ jobs:
           fi
 
       - name: Ensure all rules are in the documentation sidebar
-        run: NODE_OPTIONS="--require esbuild-runner/register" pnpm exec markdownlint docs/_sidebar.md --config tests/docs/.markdownlint.json --rules tests/docs/_sidebar.ts
+        run: NODE_OPTIONS="--require esbuild-runner/register" ./node_modules/.bin/markdownlint docs/_sidebar.md --config tests/docs/.markdownlint.json --rules tests/docs/_sidebar.ts
 
       - name: Copy Documentation README
         run: ./.husky/pre-commit

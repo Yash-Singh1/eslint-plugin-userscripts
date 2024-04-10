@@ -15,22 +15,26 @@ const plugin = {
     const doneRules: string[] = [];
 
     let utilitiesStarted = false;
-    params.tokens = params.tokens.reduce((allTokens, token) => {
-      if (token.line === '- Utilities') {
-        utilitiesStarted = true;
-      }
-      if (
-        (token.content === 'Rules' || allTokens.length > 0) &&
-        !utilitiesStarted
-      ) {
-        allTokens.push(token);
-      }
-      return allTokens;
-    }, [] as MarkdownItToken[]);
+    params.parsers.markdownit.tokens = params.parsers.markdownit.tokens.reduce(
+      (allTokens, token) => {
+        if (token.line === '- Utilities') {
+          utilitiesStarted = true;
+        }
+        if (
+          (token.content === 'Rules' || allTokens.length > 0) &&
+          !utilitiesStarted
+        ) {
+          allTokens.push(token);
+        }
+        return allTokens;
+      },
+      [] as MarkdownItToken[]
+    );
 
-    for (const token of params.tokens) {
+    for (const token of params.parsers.markdownit.tokens) {
       if (token.line === '- Rules' || token.type !== 'inline') continue;
       const ruleName = token.line.trim().split('`')[1];
+      if (typeof ruleName !== 'string') continue;
       if (!rules.includes(ruleName)) {
         onError({
           lineNumber: token.lineNumber,
@@ -53,11 +57,12 @@ const plugin = {
       (rule) => !doneRules.includes(rule)
     )) {
       onError({
-        lineNumber: params.tokens[0].lineNumber,
+        lineNumber: params.parsers.markdownit.tokens[0].lineNumber,
         detail: `Rule ${undocumentedRule} is not documented in the sidebar`
       });
     }
-  }
+  },
+  parser: 'markdownit'
 } satisfies Rule;
 
 export const names = plugin.names;

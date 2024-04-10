@@ -22,7 +22,7 @@ const rule = {
       .map((ruleJs) => ruleJs.split('.')[0]);
     const doneRules: string[] = [];
 
-    for (const token of params.tokens.filter(
+    for (const token of params.parsers.markdownit.tokens.filter(
       (token) => token.type === 'td_open'
     )) {
       const ruleName = token.line.trim().slice(4).split('`')[0];
@@ -59,7 +59,7 @@ const rule = {
       }
     }
 
-    const tableOpen = params.tokens.find(
+    const tableOpen = params.parsers.markdownit.tokens.find(
       (token) => token.type === 'table_open'
     );
     if (tableOpen) {
@@ -73,11 +73,12 @@ const rule = {
       }
     } else {
       onError({
-        lineNumber: params.tokens[0].lineNumber,
+        lineNumber: params.parsers.markdownit.tokens[0].lineNumber,
         detail: `No table found in the README`
       });
     }
-  }
+  },
+  parser: 'markdownit'
 } satisfies Rule;
 
 export const names = rule.names;
