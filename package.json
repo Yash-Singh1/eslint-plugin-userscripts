@@ -34,7 +34,7 @@
     "@typescript-eslint/parser": "^7.6.0",
     "esbuild": "^0.20.0",
     "esbuild-runner": "^2.2.2",
-    "eslint": "9.2.0",
+    "eslint": "9.3.0",
     "eslint-plugin-eslint-plugin": "^6.1.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-unicorn": "^52.0.0",
