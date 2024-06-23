@@ -31,27 +31,27 @@ Add `userscripts` to the plugins section of your `.eslintrc` configuration file:
 Add an element to the config array in your `eslint.config.*` file :
 
 ```js
-const userscripts = require('eslint-plugin-userscripts')
+const userscripts = require('eslint-plugin-userscripts');
 
 module.exports = [
   // other configs
   {
     files: ['*.user.js'],
     plugins: {
-      'userscripts': {
-        rules: userscripts.rules,
-      },
+      userscripts: {
+        rules: userscripts.rules
+      }
     },
     rules: {
-      ...userscripts.configs.recommended.rules,
+      ...userscripts.configs.recommended.rules
     },
     settings: {
       userscriptVersions: {
-        violentmonkey: '*',
-      },
-    },
-  },
-]
+        violentmonkey: '*'
+      }
+    }
+  }
+];
 ```
 
 ## Supported Rules

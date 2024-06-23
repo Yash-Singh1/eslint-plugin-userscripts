@@ -16,7 +16,7 @@ Next, install `eslint-plugin-userscripts`:
 npm install eslint-plugin-userscripts --save-dev
 ```
 
-## Usage
+## Usage in legacy config
 
 Add `userscripts` to the plugins section of your `.eslintrc` configuration file:
 
@@ -24,6 +24,34 @@ Add `userscripts` to the plugins section of your `.eslintrc` configuration file:
 {
   "extends": ["plugin:userscripts/recommended"]
 }
+```
+
+## Usage in recent flat config
+
+Add an element to the config array in your `eslint.config.*` file :
+
+```js
+const userscripts = require('eslint-plugin-userscripts');
+
+module.exports = [
+  // other configs
+  {
+    files: ['*.user.js'],
+    plugins: {
+      userscripts: {
+        rules: userscripts.rules
+      }
+    },
+    rules: {
+      ...userscripts.configs.recommended.rules
+    },
+    settings: {
+      userscriptVersions: {
+        violentmonkey: '*'
+      }
+    }
+  }
+];
 ```
 
 ## Supported Rules
