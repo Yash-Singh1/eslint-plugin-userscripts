@@ -157,6 +157,7 @@ export const compatMap: {
       { type: 'tampermonkey', versionConstraint: '>=3.8' },
       { type: 'violentmonkey', versionConstraint: '>=2.1.6.2' }
     ],
+    tag: [{ type: 'tampermonkey', versionConstraint: '>=5.3' }],
 
     // OpenUserJS
     collaborator: [],
