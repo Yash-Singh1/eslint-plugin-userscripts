@@ -61,6 +61,16 @@ ruleTester.run('compat-headers', compatHeaders, {
           tampermonkey: '*'
         }
       }
+    },
+    {
+      code: `// ==UserScript==
+// @tag productivity
+// ==/UserScript==`,
+      settings: {
+        userscriptVersions: {
+          tampermonkey: '5.3.2'
+        }
+      }
     }
   ],
   invalid: [
