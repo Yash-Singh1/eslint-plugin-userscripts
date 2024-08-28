@@ -91,7 +91,10 @@ export const compatMap: {
       { type: 'violentmonkey', versionConstraint: '*' },
       { type: 'greasemonkey', versionConstraint: '>=0.2.5' }
     ],
-    sandbox: [{ type: 'tampermonkey', versionConstraint: '>=4.18' }]
+    sandbox: [{ type: 'tampermonkey', versionConstraint: '>=4.18' }],
+    'top-level-await': [
+      { type: 'violentmonkey', versionConstraint: '>=2.19.2' }
+    ]
   },
   nonFunctional: {
     name: [

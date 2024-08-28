@@ -5,26 +5,27 @@ const ruleTester = new RuleTester();
 ruleTester.run('no-invalid-headers', noInvalidHeader, {
   valid: [
     `// ==UserScript==
-    // @name           Bottom Padding to Swagger UI
-    // @namespace      https://github.com/Yash-Singh1/UserScripts
-    // @version        1.3
-    // @description    Adds bottom padding to the Swagger UI
-    // @description:en Adds bottom padding to the Swagger UI
-    // @author         Yash Singh
-    // @match          https://*/*
-    // @match          http://*/*
-    // @icon           https://petstore.swagger.io/favicon-32x32.png
-    // @grant          none
-    // @license        MIT
-    // @homepage       https://github.com/Yash-Singh1/UserScripts/tree/main/Bottom_Padding_to_Swagger_UI#readme
-    // @homepageURL    https://github.com/Yash-Singh1/UserScripts/tree/main/Bottom_Padding_to_Swagger_UI#readme
-    // @supportURL     https://github.com/Yash-Singh1/UserScripts/issues
-    // @downloadURL    https://raw.githubusercontent.com/Yash-Singh1/UserScripts/main/Bottom_Padding_to_Swagger_UI/Bottom_Padding_to_Swagger_UI.user.js
-    // @updateURL      https://raw.githubusercontent.com/Yash-Singh1/UserScripts/main/Bottom_Padding_to_Swagger_UI/Bottom_Padding_to_Swagger_UI.user.js
-    // @nocompat       Chrome
-    // @history        1.0 Initial release
-    // @copyright      2020-2021, Yash Singh (https://github.com/Yash-Singh1)
-    // @sandbox        JavaScript
+    // @name            Bottom Padding to Swagger UI
+    // @namespace       https://github.com/Yash-Singh1/UserScripts
+    // @version         1.3
+    // @description     Adds bottom padding to the Swagger UI
+    // @description:en  Adds bottom padding to the Swagger UI
+    // @author          Yash Singh
+    // @match           https://*/*
+    // @match           http://*/*
+    // @icon            https://petstore.swagger.io/favicon-32x32.png
+    // @grant           none
+    // @license         MIT
+    // @homepage        https://github.com/Yash-Singh1/UserScripts/tree/main/Bottom_Padding_to_Swagger_UI#readme
+    // @homepageURL     https://github.com/Yash-Singh1/UserScripts/tree/main/Bottom_Padding_to_Swagger_UI#readme
+    // @supportURL      https://github.com/Yash-Singh1/UserScripts/issues
+    // @downloadURL     https://raw.githubusercontent.com/Yash-Singh1/UserScripts/main/Bottom_Padding_to_Swagger_UI/Bottom_Padding_to_Swagger_UI.user.js
+    // @updateURL       https://raw.githubusercontent.com/Yash-Singh1/UserScripts/main/Bottom_Padding_to_Swagger_UI/Bottom_Padding_to_Swagger_UI.user.js
+    // @nocompat        Chrome
+    // @history         1.0 Initial release
+    // @copyright       2020-2021, Yash Singh (https://github.com/Yash-Singh1)
+    // @sandbox         JavaScript
+    // @top-level-await
     // ==/UserScript==
     /* globals globalObj */`
   ],
