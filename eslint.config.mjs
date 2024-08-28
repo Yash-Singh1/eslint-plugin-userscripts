@@ -56,6 +56,9 @@ export default [
       globals: {
         ...globals.mocha
       }
+    },
+    rules: {
+      '@typescript-eslint/no-unused-expressions': 'off' // Typescript-eslint errors on should.js expressions
     }
   }
 ];
