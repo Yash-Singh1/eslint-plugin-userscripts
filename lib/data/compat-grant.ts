@@ -41,6 +41,8 @@ export const compatMap: CompatMap = {
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '>=0.8.20090123.1 <4' }
   ],
+  'GM.deleteValues': [{ type: 'tampermonkey', versionConstraint: '>=5.3' }],
+  'GM_deleteValues': [{ type: 'tampermonkey', versionConstraint: '>=5.3' }],
   'GM.download': [{ type: 'tampermonkey', versionConstraint: '>=4.5' }],
   GM_download: [
     { type: 'tampermonkey', versionConstraint: '>=3.8' },
@@ -79,6 +81,8 @@ export const compatMap: CompatMap = {
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '>=0.3-beta <4' }
   ],
+  'GM.getValues': [{ type: 'tampermonkey', versionConstraint: '>=5.3' }],
+  'GM_getValues': [{ type: 'tampermonkey', versionConstraint: '>=5.3' }],
   'GM.info': [
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' },
@@ -166,6 +170,8 @@ export const compatMap: CompatMap = {
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '>=0.3-beta <4' }
   ],
+  'GM.setValues': [{ type: 'tampermonkey', versionConstraint: '>=5.3' }],
+  'GM_setValues': [{ type: 'tampermonkey', versionConstraint: '>=5.3' }],
   'GM.unregisterMenuCommand': [
     { type: 'tampermonkey', versionConstraint: '>=4.5' }
   ],
