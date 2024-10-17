@@ -47,6 +47,10 @@ export const compatMap: {
       { type: 'violentmonkey', versionConstraint: '*' },
       { type: 'greasemonkey', versionConstraint: '>=0.9.8' }
     ],
+    'run-in': [
+      // 5.3.6209 beta
+      { type: 'tampermonkey', versionConstraint: '>=5.3' }
+    ],
     resource: [
       { type: 'tampermonkey', versionConstraint: '*' },
       { type: 'violentmonkey', versionConstraint: '*' },
