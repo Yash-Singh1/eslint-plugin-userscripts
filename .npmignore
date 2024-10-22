@@ -10,4 +10,5 @@ coverage/
 .markdownlint.json
 .gitpod.yml
 tsup.config.ts
+renovate.json
 tsconfig.json
