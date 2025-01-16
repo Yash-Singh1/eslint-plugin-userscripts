@@ -179,8 +179,8 @@ export const compatMap: CompatMap = {
     { type: 'tampermonkey', versionConstraint: '>=3.6.3737' },
     { type: 'violentmonkey', versionConstraint: '>=2.9.4' }
   ],
-  'GM.webRequest': [{ type: 'tampermonkey', versionConstraint: '>=4.5' }],
-  GM_webRequest: [{ type: 'tampermonkey', versionConstraint: '>=4.4' }],
+  'GM.webRequest': [{ type: 'tampermonkey', versionConstraint: '>=4.5 <=5.2' }],
+  GM_webRequest: [{ type: 'tampermonkey', versionConstraint: '>=4.4 <=5.2' }],
   GM_xmlhttpRequest: [
     { type: 'tampermonkey', versionConstraint: '*' },
     { type: 'violentmonkey', versionConstraint: '*' },
