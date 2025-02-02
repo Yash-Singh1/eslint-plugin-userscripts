@@ -24,6 +24,7 @@ describe('headers data', () => {
                   .property('type')
                   .a.String()
                   .equalOneOf([
+                    'adguard',
                     'tampermonkey',
                     'greasemonkey',
                     'violentmonkey'

@@ -45,6 +45,7 @@ ruleTester.run('compat-grant', compatGrant, {
       options: [{ requireAllCompatible: true }],
       settings: {
         userscriptVersions: {
+          adguard: '*',
           tampermonkey: '*',
           greasemonkey: '*'
         }
@@ -69,6 +70,7 @@ ruleTester.run('compat-grant', compatGrant, {
       options: [{ requireAllCompatible: true, gmPolyfill: true }],
       settings: {
         userscriptVersions: {
+          adguard: '*',
           violentmonkey: '*',
           tampermonkey: '*',
           greasemonkey: '*'
@@ -82,6 +84,7 @@ ruleTester.run('compat-grant', compatGrant, {
       options: [{ requireAllCompatible: true, gmPolyfill: false }],
       settings: {
         userscriptVersions: {
+          adguard: '*',
           violentmonkey: '*',
           tampermonkey: '*',
           greasemonkey: '*'
@@ -98,6 +101,7 @@ ruleTester.run('compat-grant', compatGrant, {
       options: [{ requireAllCompatible: true, gmPolyfill: false }],
       settings: {
         userscriptVersions: {
+          adguard: '*',
           violentmonkey: '*',
           tampermonkey: '*',
           greasemonkey: '*'
