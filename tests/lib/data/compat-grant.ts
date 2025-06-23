@@ -10,7 +10,7 @@ function validateCompatibilityData(compatabilityData: VersionAssertion[]) {
       compatabilityAssertion.should.have
         .property('type')
         .a.String()
-        .equalOneOf(['tampermonkey', 'greasemonkey', 'violentmonkey']);
+        .equalOneOf(['adguard', 'tampermonkey', 'greasemonkey', 'violentmonkey']);
       compatabilityAssertion.should.have.property('versionConstraint').a.String;
     }
   );

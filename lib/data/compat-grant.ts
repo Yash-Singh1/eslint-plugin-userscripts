@@ -6,10 +6,12 @@ import type { CompatMap, VersionAssertion } from './version-assertion';
 // - Greasemonkey: https://wiki.greasespot.net/Greasemonkey_Manual:API
 export const compatMap: CompatMap = {
   'GM.addElement': [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.11.6113' },
     { type: 'violentmonkey', versionConstraint: '>=2.13.0-beta.3' }
   ],
   GM_addElement: [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.11.6113' },
     { type: 'violentmonkey', versionConstraint: '>=2.13.0-beta.3' }
   ],
@@ -18,6 +20,7 @@ export const compatMap: CompatMap = {
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' }
   ],
   GM_addStyle: [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '*' },
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '>=0.6.1.4 <4' }
@@ -32,11 +35,13 @@ export const compatMap: CompatMap = {
   'GM.cookie': [{ type: 'tampermonkey', versionConstraint: '>=4.8' }],
   GM_cookie: [{ type: 'tampermonkey', versionConstraint: '>=4.8' }],
   'GM.deleteValue': [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' },
     { type: 'greasemonkey', versionConstraint: '>=4.0' }
   ],
   GM_deleteValue: [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '*' },
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '>=0.8.20090123.1 <4' }
@@ -50,6 +55,7 @@ export const compatMap: CompatMap = {
   ],
   'GM.getResourceText': [{ type: 'tampermonkey', versionConstraint: '>=4.5' }],
   GM_getResourceText: [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '*' },
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '>=0.8.20080609.0 <4' }
@@ -58,11 +64,13 @@ export const compatMap: CompatMap = {
     { type: 'violentmonkey', versionConstraint: '>=2.12.0 <2.13.0.10' }
   ],
   GM_getResourceURL: [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '*' },
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '>=0.8.20080609.0 <4' }
   ],
   'GM.getResourceUrl': [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
     { type: 'violentmonkey', versionConstraint: '>=2.13.0.10' },
     { type: 'greasemonkey', versionConstraint: '>=4.0' }
@@ -72,11 +80,13 @@ export const compatMap: CompatMap = {
   'GM.getTabs': [{ type: 'tampermonkey', versionConstraint: '>=4.5' }],
   GM_getTabs: [{ type: 'tampermonkey', versionConstraint: '>=4.0.10' }],
   'GM.getValue': [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' },
     { type: 'greasemonkey', versionConstraint: '>=4.0' }
   ],
   GM_getValue: [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '*' },
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '>=0.3-beta <4' }
@@ -84,21 +94,25 @@ export const compatMap: CompatMap = {
   'GM.getValues': [{ type: 'tampermonkey', versionConstraint: '>=5.3' }],
   GM_getValues: [{ type: 'tampermonkey', versionConstraint: '>=5.3' }],
   'GM.info': [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' },
     { type: 'greasemonkey', versionConstraint: '>=4' }
   ],
   GM_info: [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=2.4.2718' },
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '>=0.9.16 <4' }
   ],
   'GM.listValues': [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' },
     { type: 'greasemonkey', versionConstraint: '>=4' }
   ],
   GM_listValues: [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '*' },
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '>=0.8.20090123.1 <4' }
@@ -108,11 +122,13 @@ export const compatMap: CompatMap = {
     { type: 'greasemonkey', versionConstraint: '>=4' }
   ],
   GM_log: [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '*' },
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '>=0.3-beta <4' }
   ],
   'GM.notification': [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' },
     { type: 'greasemonkey', versionConstraint: '>=4' }
@@ -122,11 +138,13 @@ export const compatMap: CompatMap = {
     { type: 'violentmonkey', versionConstraint: '>=2.5.0' }
   ],
   'GM.openInTab': [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' },
     { type: 'greasemonkey', versionConstraint: '>=4' }
   ],
   GM_openInTab: [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '*' },
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '>=0.5-beta <4' }
@@ -151,21 +169,25 @@ export const compatMap: CompatMap = {
   'GM.saveTab': [{ type: 'tampermonkey', versionConstraint: '>=4.5' }],
   GM_saveTab: [{ type: 'tampermonkey', versionConstraint: '>=4.0.10' }],
   'GM.setClipboard': [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' },
     { type: 'greasemonkey', versionConstraint: '>=4' }
   ],
   GM_setClipboard: [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=2.6.2767' },
     { type: 'violentmonkey', versionConstraint: '>=2.5.0' },
     { type: 'greasemonkey', versionConstraint: '>=1.10 <4' }
   ],
   'GM.setValue': [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' },
     { type: 'greasemonkey', versionConstraint: '>=4' }
   ],
   GM_setValue: [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '*' },
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '>=0.3-beta <4' }
@@ -182,21 +204,25 @@ export const compatMap: CompatMap = {
   'GM.webRequest': [{ type: 'tampermonkey', versionConstraint: '>=4.5 <=5.2' }],
   GM_webRequest: [{ type: 'tampermonkey', versionConstraint: '>=4.4 <=5.2' }],
   GM_xmlhttpRequest: [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '*' },
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '>=0.2.5 <4' }
   ],
   'GM.xmlHttpRequest': [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' },
     { type: 'greasemonkey', versionConstraint: '>=4.0' }
   ],
   none: [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '*' },
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '*' }
   ],
   unsafeWindow: [
+    { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '*' },
     { type: 'violentmonkey', versionConstraint: '*' },
     { type: 'greasemonkey', versionConstraint: '>=0.5-beta' }
@@ -209,7 +235,10 @@ export const compatMap: CompatMap = {
     { type: 'tampermonkey', versionConstraint: '>=3.12.58' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.10' }
   ],
-  'window.onurlchange': [{ type: 'tampermonkey', versionConstraint: '>=4.11' }]
+  'window.onurlchange': [{ type: 'tampermonkey', versionConstraint: '>=4.11' }],
+  'property:settings': [
+    { type: 'adguard', versionConstraint: '*' },
+  ]
 };
 
 export const gmPolyfillOverride: {
