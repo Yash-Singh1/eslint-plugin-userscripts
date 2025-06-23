@@ -25,7 +25,7 @@
     "@eslint-community/eslint-plugin-eslint-comments": "^4.3.0",
     "@eslint/js": "^9.0.0",
     "@types/eslint": "^8.44.8",
-    "@types/estree": "1.0.5",
+    "@types/estree": "1.0.8",
     "@types/json-schema": "^7.0.15",
     "@types/mocha": "^10.0.6",
     "@types/node": "^22.1.0",
