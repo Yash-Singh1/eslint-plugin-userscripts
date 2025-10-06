@@ -27,7 +27,8 @@ describe('headers data', () => {
                     'adguard',
                     'tampermonkey',
                     'greasemonkey',
-                    'violentmonkey'
+                    'violentmonkey',
+                    'scriptcat'
                   ]);
                 compatabilityAssertion.should.have.property('versionConstraint')
                   .a.String;

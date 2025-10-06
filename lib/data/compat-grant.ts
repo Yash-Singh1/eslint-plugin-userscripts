@@ -8,7 +8,8 @@ export const compatMap: CompatMap = {
   'GM.addElement': [
     { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.11.6113' },
-    { type: 'violentmonkey', versionConstraint: '>=2.13.0-beta.3' }
+    { type: 'violentmonkey', versionConstraint: '>=2.13.0-beta.3' },
+    { type: 'scriptcat', versionConstraint: '>=1.0.0' }
   ],
   GM_addElement: [
     { type: 'adguard', versionConstraint: '*' },
@@ -17,7 +18,8 @@ export const compatMap: CompatMap = {
   ],
   'GM.addStyle': [
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
-    { type: 'violentmonkey', versionConstraint: '>=2.12.0' }
+    { type: 'violentmonkey', versionConstraint: '>=2.12.0' },
+    { type: 'scriptcat', versionConstraint: '>=1.0.0' }
   ],
   GM_addStyle: [
     { type: 'adguard', versionConstraint: '*' },
@@ -26,14 +28,18 @@ export const compatMap: CompatMap = {
     { type: 'greasemonkey', versionConstraint: '>=0.6.1.4 <4' }
   ],
   'GM.addValueChangeListener': [
-    { type: 'tampermonkey', versionConstraint: '>=4.5' }
+    { type: 'tampermonkey', versionConstraint: '>=4.5' },
+    { type: 'scriptcat', versionConstraint: '>=1.0.0' }
   ],
   GM_addValueChangeListener: [
     { type: 'tampermonkey', versionConstraint: '>=2.3.2607' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' }
   ],
   'GM.cookie': [{ type: 'tampermonkey', versionConstraint: '>=4.8' }],
-  GM_cookie: [{ type: 'tampermonkey', versionConstraint: '>=4.8' }],
+  GM_cookie: [
+    { type: 'tampermonkey', versionConstraint: '>=4.8' },
+    { type: 'scriptcat', versionConstraint: '>=0.10.0-alpha' }
+  ],
   'GM.deleteValue': [
     { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
@@ -48,7 +54,10 @@ export const compatMap: CompatMap = {
   ],
   'GM.deleteValues': [{ type: 'tampermonkey', versionConstraint: '>=5.3' }],
   GM_deleteValues: [{ type: 'tampermonkey', versionConstraint: '>=5.3' }],
-  'GM.download': [{ type: 'tampermonkey', versionConstraint: '>=4.5' }],
+  'GM.download': [
+    { type: 'tampermonkey', versionConstraint: '>=4.5' },
+    { type: 'scriptcat', versionConstraint: '>=1.0.0' }
+  ],
   GM_download: [
     { type: 'tampermonkey', versionConstraint: '>=3.8' },
     { type: 'violentmonkey', versionConstraint: '>=2.9.5' }
@@ -75,9 +84,15 @@ export const compatMap: CompatMap = {
     { type: 'violentmonkey', versionConstraint: '>=2.13.0.10' },
     { type: 'greasemonkey', versionConstraint: '>=4.0' }
   ],
-  'GM.getTab': [{ type: 'tampermonkey', versionConstraint: '>=4.5' }],
+  'GM.getTab': [
+    { type: 'tampermonkey', versionConstraint: '>=4.5' },
+    { type: 'scriptcat', versionConstraint: '>=1.0.0' }
+  ],
   GM_getTab: [{ type: 'tampermonkey', versionConstraint: '>=4.0.10' }],
-  'GM.getTabs': [{ type: 'tampermonkey', versionConstraint: '>=4.5' }],
+  'GM.getTabs': [
+    { type: 'tampermonkey', versionConstraint: '>=4.5' },
+    { type: 'scriptcat', versionConstraint: '>=1.0.0' }
+  ],
   GM_getTabs: [{ type: 'tampermonkey', versionConstraint: '>=4.0.10' }],
   'GM.getValue': [
     { type: 'adguard', versionConstraint: '*' },
@@ -119,7 +134,8 @@ export const compatMap: CompatMap = {
   ],
   'GM.log': [
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
-    { type: 'greasemonkey', versionConstraint: '>=4' }
+    { type: 'greasemonkey', versionConstraint: '>=4' },
+    { type: 'scriptcat', versionConstraint: '>=1.0.0' }
   ],
   GM_log: [
     { type: 'adguard', versionConstraint: '*' },
@@ -131,28 +147,38 @@ export const compatMap: CompatMap = {
     { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' },
-    { type: 'greasemonkey', versionConstraint: '>=4' }
+    { type: 'greasemonkey', versionConstraint: '>=4' },
+    { type: 'scriptcat', versionConstraint: '>=1.0.0' }
   ],
   GM_notification: [
     { type: 'tampermonkey', versionConstraint: '>=2.0.2344' },
     { type: 'violentmonkey', versionConstraint: '>=2.5.0' }
   ],
+  'GM.closeNotification': [{ type: 'scriptcat', versionConstraint: '>=1.0.0' }],
+  'GM.updateNotification': [
+    { type: 'scriptcat', versionConstraint: '>=1.0.0' }
+  ],
   'GM.openInTab': [
     { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' },
-    { type: 'greasemonkey', versionConstraint: '>=4' }
+    { type: 'greasemonkey', versionConstraint: '>=4' },
+    { type: 'scriptcat', versionConstraint: '>=1.0.0' }
   ],
   GM_openInTab: [
     { type: 'adguard', versionConstraint: '*' },
     { type: 'tampermonkey', versionConstraint: '*' },
     { type: 'violentmonkey', versionConstraint: '*' },
-    { type: 'greasemonkey', versionConstraint: '>=0.5-beta <4' }
+    { type: 'greasemonkey', versionConstraint: '>=0.5-beta <4' },
+    { type: 'scriptcat', versionConstraint: '>=0.2.0' }
   ],
+  'GM.closeInTab': [{ type: 'scriptcat', versionConstraint: '>=1.0.0' }],
+  GM_closeInTab: [{ type: 'scriptcat', versionConstraint: '>=0.4.5' }],
   'GM.registerMenuCommand': [
     { type: 'tampermonkey', versionConstraint: '>=4.5' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' },
-    { type: 'greasemonkey', versionConstraint: '>=4.11' }
+    { type: 'greasemonkey', versionConstraint: '>=4.11' },
+    { type: 'scriptcat', versionConstraint: '>=1.0.0' }
   ],
   GM_registerMenuCommand: [
     { type: 'tampermonkey', versionConstraint: '*' },
@@ -160,13 +186,17 @@ export const compatMap: CompatMap = {
     { type: 'greasemonkey', versionConstraint: '>=0.2.5 <4' }
   ],
   'GM.removeValueChangeListener': [
-    { type: 'tampermonkey', versionConstraint: '>=4.5' }
+    { type: 'tampermonkey', versionConstraint: '>=4.5' },
+    { type: 'scriptcat', versionConstraint: '>=1.0.0' }
   ],
   GM_removeValueChangeListener: [
     { type: 'tampermonkey', versionConstraint: '>=2.3.2607' },
     { type: 'violentmonkey', versionConstraint: '>=2.12.0' }
   ],
-  'GM.saveTab': [{ type: 'tampermonkey', versionConstraint: '>=4.5' }],
+  'GM.saveTab': [
+    { type: 'tampermonkey', versionConstraint: '>=4.5' },
+    { type: 'scriptcat', versionConstraint: '>=1.0.0' }
+  ],
   GM_saveTab: [{ type: 'tampermonkey', versionConstraint: '>=4.0.10' }],
   'GM.setClipboard': [
     { type: 'adguard', versionConstraint: '*' },
@@ -195,7 +225,8 @@ export const compatMap: CompatMap = {
   'GM.setValues': [{ type: 'tampermonkey', versionConstraint: '>=5.3' }],
   GM_setValues: [{ type: 'tampermonkey', versionConstraint: '>=5.3' }],
   'GM.unregisterMenuCommand': [
-    { type: 'tampermonkey', versionConstraint: '>=4.5' }
+    { type: 'tampermonkey', versionConstraint: '>=4.5' },
+    { type: 'scriptcat', versionConstraint: '>=1.0.0' }
   ],
   GM_unregisterMenuCommand: [
     { type: 'tampermonkey', versionConstraint: '>=3.6.3737' },
@@ -236,9 +267,7 @@ export const compatMap: CompatMap = {
     { type: 'violentmonkey', versionConstraint: '>=2.12.10' }
   ],
   'window.onurlchange': [{ type: 'tampermonkey', versionConstraint: '>=4.11' }],
-  'property:settings': [
-    { type: 'adguard', versionConstraint: '*' },
-  ]
+  'property:settings': [{ type: 'adguard', versionConstraint: '*' }]
 };
 
 export const gmPolyfillOverride: {
