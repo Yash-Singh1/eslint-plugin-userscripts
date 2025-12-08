@@ -46,6 +46,7 @@ ruleTester.run('compat-grant', compatGrant, {
       settings: {
         userscriptVersions: {
           adguard: '*',
+          scriptcat: '*',
           tampermonkey: '*',
           greasemonkey: '*'
         }
@@ -71,6 +72,7 @@ ruleTester.run('compat-grant', compatGrant, {
       settings: {
         userscriptVersions: {
           adguard: '*',
+          scriptcat: '*',
           violentmonkey: '*',
           tampermonkey: '*',
           greasemonkey: '*'
@@ -85,6 +87,7 @@ ruleTester.run('compat-grant', compatGrant, {
       settings: {
         userscriptVersions: {
           adguard: '*',
+          scriptcat: '*',
           violentmonkey: '*',
           tampermonkey: '*',
           greasemonkey: '*'
@@ -102,6 +105,7 @@ ruleTester.run('compat-grant', compatGrant, {
       settings: {
         userscriptVersions: {
           adguard: '*',
+          scriptcat: '*',
           violentmonkey: '*',
           tampermonkey: '*',
           greasemonkey: '*'

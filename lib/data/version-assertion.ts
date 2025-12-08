@@ -1,5 +1,10 @@
 export type VersionAssertion = {
-  type: 'adguard' | 'tampermonkey' | 'violentmonkey' | 'greasemonkey';
+  type:
+    | 'adguard'
+    | 'greasemonkey'
+    | 'scriptcat'
+    | 'tampermonkey'
+    | 'violentmonkey';
   versionConstraint: string;
 };
 

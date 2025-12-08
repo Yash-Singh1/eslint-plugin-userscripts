@@ -1,6 +1,6 @@
 import type {
   CompatMap,
-  VersionAssertion
+  VersionAssertion,
 } from '../../../lib/data/version-assertion';
 import { compatMap } from '../../../lib/data/compat-headers';
 
@@ -25,8 +25,9 @@ describe('headers data', () => {
                   .a.String()
                   .equalOneOf([
                     'adguard',
-                    'tampermonkey',
                     'greasemonkey',
+                    'scriptcat',
+                    'tampermonkey',
                     'violentmonkey'
                   ]);
                 compatabilityAssertion.should.have.property('versionConstraint')
